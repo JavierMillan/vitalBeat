@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitalBeat - Transforma tu Cuerpo, Eleva tu Energía</title>
+    <meta name="description"
+        content="Estudio boutique en Guadalajara que fusiona Pilates, Kickboxing y nutrición celular. Experiencia integral de bienestar para mujeres conscientes.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'warm-orange': '#ff7849',
+                        'coral-pink': '#ff6b9d',
+                        'sunset-gold': '#ffa726',
+                        'terracotta': '#d4562c',
+                        'peach': '#ffab91',
+                        'burgundy': '#8e24aa',
+                        'cream': '#fff8e1'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-900 text-white overflow-x-hidden" style="font-family: 'Inter', sans-serif;">
+
+    <!-- Subtle Background Elements -->
+    <div class="fixed inset-0 z-0">
+        <div class="warm-particle warm-particle-1"></div>
+        <div class="warm-particle warm-particle-2"></div>
+        <div class="warm-particle warm-particle-3"></div>
+    </div>
+
+    <!-- Mobile-First Navigation -->
+    <nav
+        class="fixed top-4 left-4 right-4 z-50 bg-gray-900/95 backdrop-blur-xl rounded-2xl px-4 py-3 border border-warm-orange/30 shadow-xl md:top-6 md:left-1/2 md:right-auto md:transform md:-translate-x-1/2 md:px-8 md:py-4 md:w-auto md:min-w-max">
+        <div class="flex items-center justify-between md:gap-8">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <div class="text-warm-orange font-black text-xl md:text-2xl tracking-tight">
+                    VitalBeat
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white hover:text-warm-orange transition-colors p-2" id="mobile-menu-btn">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#inicio"
+                    class="text-white/90 hover:text-warm-orange transition-colors text-sm font-medium relative group">
+                    Inicio
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-warm-orange transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#experiencia"
+                    class="text-white/90 hover:text-coral-pink transition-colors text-sm font-medium relative group">
+                    Experiencia
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-coral-pink transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#transformacion"
+                    class="text-white/90 hover:text-sunset-gold transition-colors text-sm font-medium relative group">
+                    Transformación
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-sunset-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#energia"
+                    class="text-white/90 hover:text-peach transition-colors text-sm font-medium relative group">
+                    Energía
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-peach transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+
+            <!-- CTA Button -->
+            <button
+                class="hidden md:flex items-center bg-gradient-to-r from-warm-orange to-sunset-gold text-white px-6 py-2.5 rounded-xl font-bold hover:shadow-lg hover:shadow-warm-orange/40 transition-all duration-300 transform hover:scale-105 text-sm whitespace-nowrap">
+                <i class="fas fa-sparkles mr-2 text-xs"></i>
+                Únete
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden mt-4 pt-4 border-t border-warm-orange/20 hidden" id="mobile-menu">
+            <div class="flex flex-col space-y-3">
+                <a href="#inicio" class="text-white/80 hover:text-warm-orange transition-colors py-2">Inicio</a>
+                <a href="#experiencia"
+                    class="text-white/80 hover:text-coral-pink transition-colors py-2">Experiencia</a>
+                <a href="#transformacion"
+                    class="text-white/80 hover:text-sunset-gold transition-colors py-2">Transformación</a>
+                <a href="#energia" class="text-white/80 hover:text-peach transition-colors py-2">Energía</a>
+                <button
+                    class="bg-gradient-to-r from-warm-orange to-sunset-gold text-white px-6 py-3 rounded-xl font-semibold mt-2 w-full">
+                    Únete Ahora
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile-First Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center px-4 py-20 md:px-8">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Transformación VitalBeat" class="w-full h-full object-cover md:hidden">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                alt="Transformación VitalBeat" class="w-full h-full object-cover hidden md:block">
+            <div class="absolute inset-0 bg-gradient-to-br from-amber-700/90 via-gray-800/70 to-orange-500/80"></div>
+        </div>
+
+        <!-- Subtle Floating Elements -->
+        <div
+            class="absolute top-20 left-8 w-16 h-16 bg-warm-orange/20 rounded-full blur-xl animate-gentle-float md:w-24 md:h-24 md:top-32 md:left-20">
+        </div>
+        <div class="absolute bottom-32 right-8 w-20 h-20 bg-coral-pink/20 rounded-full blur-xl animate-gentle-float md:w-32 md:h-32 md:bottom-40 md:right-32"
+            style="animation-delay: -3s;"></div>
+
+        <div class="relative z-10 text-center max-w-4xl mx-auto">
+            <!-- Mobile-First Title -->
+            <div class="mb-8">
+                <h1 class="text-5xl font-black mb-4 leading-tight md:text-7xl lg:text-8xl">
+                    <span
+                        class="block text-transparent bg-clip-text bg-gradient-to-r from-warm-orange via-sunset-gold to-coral-pink animate-soft-glow">
+                        VITAL
+                    </span>
+                    <span
+                        class="block text-transparent bg-clip-text bg-gradient-to-r from-coral-pink via-peach to-warm-orange animate-soft-glow"
+                        style="animation-delay: 0.5s;">
+                        BEAT
+                    </span>
+                </h1>
+                <div class="text-lg font-light text-white/90 mt-4 md:text-xl lg:text-2xl">
+                    Tu energía nunca fue tan poderosa
+                </div>
+            </div>
+
+            <!-- Mobile-Optimized Description -->
+            <div class="mb-8 md:mb-12">
+                <p class="text-base leading-relaxed text-white/80 mb-6 md:text-lg lg:text-xl lg:leading-relaxed">
+                    <span class="text-warm-orange font-semibold">No somos un gimnasio.</span>
+                    Somos el lugar donde tu cuerpo y mente encuentran su ritmo perfecto.
+                    <br class="hidden md:block">
+                    <span class="text-coral-pink font-semibold">Guadalajara nunca vio algo así.</span>
+                </p>
+            </div>
+
+            <!-- Mobile-First CTAs -->
+            <div class="flex flex-col gap-4 mb-8 md:flex-row md:gap-6 md:justify-center md:mb-12">
+                <button
+                    class="w-full px-8 py-4 bg-gradient-to-r from-warm-orange to-sunset-gold text-white font-bold text-lg rounded-2xl transform hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-warm-orange/40 md:w-auto md:px-12 md:py-5">
+                    <i class="fas fa-sparkles mr-2"></i>
+                    SIENTE LA DIFERENCIA
+                </button>
+
+                <button
+                    class="w-full px-8 py-4 border-2 border-white/60 text-white font-bold text-lg rounded-2xl hover:bg-white hover:text-gray-900 transition-all duration-300 backdrop-blur-sm md:w-auto md:px-12 md:py-5">
+                    <i class="fas fa-play mr-2"></i>
+                    VER EN ACCIÓN
+                </button>
+            </div>
+
+            <!-- Mobile Stats -->
+            <div class="grid grid-cols-3 gap-4 max-w-sm mx-auto md:max-w-2xl md:gap-8">
+                <div class="text-center">
+                    <div class="text-2xl font-black text-warm-orange mb-1 md:text-4xl counter" data-target="8">0</div>
+                    <div class="text-xs text-white/70 md:text-sm">MAX POR CLASE</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-black text-coral-pink mb-1 md:text-4xl counter" data-target="100">0</div>
+                    <div class="text-xs text-white/70 md:text-sm">% PERSONALIZADO</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-black text-sunset-gold mb-1 md:text-4xl counter" data-target="360">0</div>
+                    <div class="text-xs text-white/70 md:text-sm">° TRANSFORMACIÓN</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subtle Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer scroll-indicator">
+            <div class="w-5 h-8 border-2 border-white/40 rounded-full flex justify-center md:w-6 md:h-10">
+                <div class="w-0.5 h-2 bg-warm-orange rounded-full mt-2 animate-pulse md:w-1 md:h-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile-First Services Section -->
+    <section id="experiencia" class="relative py-16 bg-gradient-to-br from-gray-800 to-gray-900 md:py-24 lg:py-32">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+            <!-- Section Title -->
+            <div class="text-center mb-12 md:mb-20">
+                <h2 class="text-4xl font-black mb-4 md:text-6xl lg:text-7xl">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-warm-orange to-coral-pink">
+                        EXPERIENCIA
+                    </span>
+                    <br>
+                    <span class="text-sunset-gold">DISRUPTIVA</span>
+                </h2>
+                <p class="text-white/70 mt-4 max-w-2xl mx-auto text-sm md:text-base">
+                    Cuatro pilares que transforman tu relación con el bienestar
+                </p>
+            </div>
+
+            <!-- Services Grid - Mobile First -->
+            <div class="space-y-8 md:grid md:grid-cols-2 md:gap-8 md:space-y-0 lg:gap-12">
+                <!-- Pilates Card -->
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-warm-orange/20 to-sunset-gold/20 rounded-3xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="relative bg-gray-900/90 backdrop-blur-xl rounded-3xl p-6 border border-warm-orange/30 group-hover:border-warm-orange/60 transition-all duration-500 md:p-8">
+                        <div class="flex items-center mb-4 md:mb-6">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-r from-warm-orange to-sunset-gold rounded-xl flex items-center justify-center mr-4 md:w-16 md:h-16">
+                                <i class="fas fa-yin-yang text-xl text-white md:text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white md:text-2xl lg:text-3xl">PILATES CONSCIENTE</h3>
+                        </div>
+                        <p class="text-white/80 text-sm mb-4 leading-relaxed md:text-base md:mb-6">
+                            Reconecta con cada fibra de tu ser.
+                            <span class="text-warm-orange font-semibold">Máximo 8 guerreras por sesión.</span>
+                        </p>
+                        <div class="w-full h-48 rounded-2xl overflow-hidden mb-4 md:h-64 md:mb-6">
+                            <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Pilates VitalBeat"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <button
+                            class="w-full bg-gradient-to-r from-warm-orange to-sunset-gold text-white font-bold py-3 rounded-xl hover:shadow-lg hover:shadow-warm-orange/30 transition-all duration-300 text-sm md:text-base">
+                            DESCUBRE TU FUERZA
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Kickboxing Card -->
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-coral-pink/20 to-burgundy/20 rounded-3xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="relative bg-gray-900/90 backdrop-blur-xl rounded-3xl p-6 border border-coral-pink/30 group-hover:border-coral-pink/60 transition-all duration-500 md:p-8">
+                        <div class="flex items-center mb-4 md:mb-6">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-r from-coral-pink to-burgundy rounded-xl flex items-center justify-center mr-4 md:w-16 md:h-16">
+                                <i class="fas fa-fire text-xl text-white md:text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white md:text-2xl lg:text-3xl">KICKBOXING EXPLOSIVO</h3>
+                        </div>
+                        <p class="text-white/80 text-sm mb-4 leading-relaxed md:text-base md:mb-6">
+                            Libera tu poder interior. Cada golpe es liberación.
+                            <span class="text-coral-pink font-semibold">Convierte estrés en energía pura.</span>
+                        </p>
+                        <div class="w-full h-48 rounded-2xl overflow-hidden mb-4 md:h-64 md:mb-6">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Kickboxing VitalBeat"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <button
+                            class="w-full bg-gradient-to-r from-coral-pink to-burgundy text-white font-bold py-3 rounded-xl hover:shadow-lg hover:shadow-coral-pink/30 transition-all duration-300 text-sm md:text-base">
+                            DESATA TU PODER
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Scanner Card -->
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-sunset-gold/20 to-peach/20 rounded-3xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="relative bg-gray-900/90 backdrop-blur-xl rounded-3xl p-6 border border-sunset-gold/30 group-hover:border-sunset-gold/60 transition-all duration-500 md:p-8">
+                        <div class="flex items-center mb-4 md:mb-6">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-r from-sunset-gold to-peach rounded-xl flex items-center justify-center mr-4 md:w-16 md:h-16">
+                                <i class="fas fa-dna text-xl text-gray-900 md:text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white md:text-2xl lg:text-3xl">ESCÁNER CUÁNTICO</h3>
+                        </div>
+                        <p class="text-white/80 text-sm mb-4 leading-relaxed md:text-base md:mb-6">
+                            Ve tu transformación en tiempo real.
+                            <span class="text-sunset-gold font-semibold">Tecnología que lee más allá de lo
+                                visible.</span>
+                        </p>
+                        <div class="w-full h-48 rounded-2xl overflow-hidden mb-4 md:h-64 md:mb-6">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Tecnología VitalBeat"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <button
+                            class="w-full bg-gradient-to-r from-sunset-gold to-peach text-gray-900 font-bold py-3 rounded-xl hover:shadow-lg hover:shadow-sunset-gold/30 transition-all duration-300 text-sm md:text-base">
+                            MIDE TU EVOLUCIÓN
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Nutrition Card -->
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-peach/20 to-warm-orange/20 rounded-3xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="relative bg-gray-900/90 backdrop-blur-xl rounded-3xl p-6 border border-peach/30 group-hover:border-peach/60 transition-all duration-500 md:p-8">
+                        <div class="flex items-center mb-4 md:mb-6">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-r from-peach to-warm-orange rounded-xl flex items-center justify-center mr-4 md:w-16 md:h-16">
+                                <i class="fas fa-atom text-xl text-gray-900 md:text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white md:text-2xl lg:text-3xl">NUTRICIÓN CELULAR</h3>
+                        </div>
+                        <p class="text-white/80 text-sm mb-4 leading-relaxed md:text-base md:mb-6">
+                            VitalHealth: suplementos que tu cuerpo entiende.
+                            <span class="text-peach font-semibold">Alimenta cada célula con propósito.</span>
+                        </p>
+                        <div class="w-full h-48 rounded-2xl overflow-hidden mb-4 md:h-64 md:mb-6">
+                            <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Nutrición VitalHealth"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <button
+                            class="w-full bg-gradient-to-r from-peach to-warm-orange text-gray-900 font-bold py-3 rounded-xl hover:shadow-lg hover:shadow-peach/30 transition-all duration-300 text-sm md:text-base">
+                            NUTRE TU ESENCIA
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile-First Packages Section -->
+    <section id="transformacion" class="relative py-16 bg-black md:py-24 lg:py-32">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+            <div class="text-center mb-12 md:mb-20">
+                <h2 class="text-4xl font-black mb-4 md:text-6xl lg:text-7xl">
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-coral-pink via-peach to-sunset-gold">
+                        ELIGE TU
+                    </span>
+                    <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-warm-orange to-terracotta">
+                        TRANSFORMACIÓN
+                    </span>
+                </h2>
+                <p class="text-white/70 mt-4 max-w-3xl mx-auto text-sm md:text-base">
+                    Cada paquete es un universo diseñado para tu evolución personal
+                </p>
+            </div>
+
+            <!-- Mobile-First Packages -->
+            <div class="space-y-6 md:grid md:grid-cols-3 md:gap-6 md:space-y-0 lg:gap-8">
+                <!-- Discover Package -->
+                <div
+                    class="bg-gradient-to-br from-warm-orange/10 to-sunset-gold/10 backdrop-blur-xl rounded-3xl p-6 border border-warm-orange/30 hover:border-warm-orange/60 transition-all duration-500 hover:scale-105 md:p-8">
+                    <h3 class="text-2xl font-bold text-warm-orange mb-4">DISCOVER</h3>
+                    <div class="text-3xl font-black text-white mb-2 md:text-4xl">$1,200</div>
+                    <p class="text-white/80 text-sm mb-4 md:text-base">Tu primer paso hacia la transformación</p>
+                    <ul class="space-y-2 text-sm text-white/70 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-warm-orange mr-3"></i>
+                            8 sesiones de despertar
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-warm-orange mr-3"></i>
+                            Escáner inicial revelador
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-warm-orange mr-3"></i>
+                            Comunidad de guerreras
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-warm-orange mr-3"></i>
+                            Acceso a retos mensuales
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full bg-gradient-to-r from-warm-orange to-sunset-gold text-white font-bold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-warm-orange/30">
+                        DESPERTAR
+                    </button>
+                </div>
+
+                <!-- Transform Package - Featured -->
+                <div
+                    class="bg-gradient-to-br from-coral-pink/20 to-burgundy/20 backdrop-blur-xl rounded-3xl p-6 border border-coral-pink/50 hover:border-coral-pink transition-all duration-500 hover:scale-105 relative md:p-8 md:scale-105">
+                    <div
+                        class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-coral-pink to-burgundy text-white px-4 py-2 rounded-full text-xs font-bold">
+                        MÁS POPULAR
+                    </div>
+                    <h3 class="text-2xl font-bold text-coral-pink mb-4 mt-4">TRANSFORM</h3>
+                    <div class="text-3xl font-black text-white mb-2 md:text-4xl">$2,200</div>
+                    <p class="text-white/80 text-sm mb-4 md:text-base">La experiencia completa de evolución</p>
+                    <ul class="space-y-2 text-sm text-white/70 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-coral-pink mr-3"></i>
+                            Nutrición personalizada
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-coral-pink mr-3"></i>
+                            20% desc. VitalHealth
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full bg-gradient-to-r from-coral-pink to-burgundy text-white font-bold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-coral-pink/30">
+                        EVOLUCIONAR
+                    </button>
+                </div>
+
+                <!-- Elite Package -->
+                <div
+                    class="bg-gradient-to-br from-sunset-gold/10 to-peach/10 backdrop-blur-xl rounded-3xl p-6 border border-sunset-gold/30 hover:border-sunset-gold/60 transition-all duration-500 hover:scale-105 md:p-8">
+                    <h3 class="text-2xl font-bold text-sunset-gold mb-4">ELITE</h3>
+                    <div class="text-3xl font-black text-white mb-2 md:text-4xl">$3,500</div>
+                    <p class="text-white/80 text-sm mb-4 md:text-base">Para las que no conocen límites</p>
+                    <ul class="space-y-2 text-sm text-white/70 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-sunset-gold mr-3"></i>
+                            Todo lo anterior + VIP
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-sunset-gold mr-3"></i>
+                            Sesiones 1:1 exclusivas
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-sunset-gold mr-3"></i>
+                            Plan nutricional VIP
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-sunset-gold mr-3"></i>
+                            Acceso prioritario 24/7
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full bg-gradient-to-r from-sunset-gold to-peach text-gray-900 font-bold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-sunset-gold/30">
+                        TRASCENDER
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RETOX Programs Section - Add this between transformacion and energia sections -->
+    <section id="retox"
+        class="relative py-16 bg-gradient-to-br from-black via-emerald-fresh/10 to-gray-900 md:py-24 lg:py-32">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+            <!-- Section Title -->
+            <div class="text-center mb-12 md:mb-20">
+                <div
+                    class="inline-flex items-center bg-emerald-fresh/20 backdrop-blur-xl rounded-full px-6 py-3 border border-emerald-fresh/30 mb-6">
+                    <i class="fas fa-rocket text-emerald-fresh mr-3"></i>
+                    <span class="text-emerald-fresh font-bold text-sm">NUEVO PROGRAMA</span>
+                </div>
+                <h2 class="text-4xl font-black mb-4 md:text-6xl lg:text-7xl">
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-fresh via-warm-orange to-coral-pink animate-soft-glow">
+                        RETOX
+                    </span>
+                    <br>
+                    <span class="text-white">RETOS POR FASES</span>
+                </h2>
+                <p class="text-white/70 mt-4 max-w-3xl mx-auto text-sm md:text-base">
+                    21 días de transformación real. 4 fases evolutivas. Tu cuerpo nunca será el mismo.
+                </p>
+            </div>
+
+            <!-- RETOX Hero Card -->
+            <div
+                class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-fresh/20 to-lime-green/10 border border-emerald-fresh/30 mb-12 group">
+                <!-- Background Image -->
+                <div class="absolute inset-0">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                        alt="RETOX - Retos de transformación"
+                        class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-emerald-fresh/70 via-gray-900/80 to-warm-orange/60">
+                    </div>
+                </div>
+
+                <div class="relative z-10 p-8 md:p-16">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <!-- Content -->
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <div class="bg-emerald-fresh text-white px-4 py-2 rounded-full text-sm font-bold mr-4">
+                                    FASE 1 ACTIVA
+                                </div>
+                                <div class="text-emerald-fresh font-bold">
+                                    21 DÍAS
+                                </div>
+                            </div>
+
+                            <h3 class="text-3xl font-black mb-4 md:text-5xl">
+                                <span class="text-white">RETOX</span>
+                                <span class="text-emerald-fresh"> | </span>
+                                <span
+                                    class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-fresh to-lime-green">
+                                    DESINTOXICA
+                                </span>
+                            </h3>
+
+                            <p class="text-lg text-white/90 mb-6 leading-relaxed">
+                                No son solo ejercicios. Son <span class="text-emerald-fresh font-semibold">rituales de
+                                    renovación</span>
+                                que activan tu sistema linfático, nutren tus células y miden tu progreso interno.
+                            </p>
+
+                            <div class="flex flex-col gap-3 mb-6 md:flex-row md:gap-4">
+                                <a href="retox.html"
+                                    class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-emerald-fresh to-lime-green text-white font-bold rounded-xl hover:shadow-lg hover:shadow-emerald-fresh/40 transition-all duration-300 transform hover:scale-105">
+                                    <i class="fas fa-play mr-2"></i>
+                                    EXPLORAR RETOX
+                                </a>
+
+                                <button
+                                    class="inline-flex items-center px-8 py-3 border-2 border-emerald-fresh text-emerald-fresh font-bold rounded-xl hover:bg-emerald-fresh hover:text-white transition-all duration-300 backdrop-blur-sm">
+                                    <i class="fab fa-whatsapp mr-2"></i>
+                                    PREGUNTAR
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Phase Preview Cards -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- RETOX Active -->
+                            <div
+                                class="bg-emerald-fresh/20 backdrop-blur-xl rounded-2xl p-4 border border-emerald-fresh/30 relative overflow-hidden">
+                                <div class="absolute top-2 right-2 w-3 h-3 bg-emerald-fresh rounded-full animate-pulse">
+                                </div>
+                                <div
+                                    class="w-10 h-10 bg-gradient-to-r from-emerald-fresh to-lime-green rounded-lg flex items-center justify-center mb-3">
+                                    <i class="fas fa-leaf text-white"></i>
+                                </div>
+                                <h4 class="text-white font-bold text-sm mb-1">RETOX</h4>
+                                <p class="text-emerald-fresh text-xs font-medium mb-2">Fase 1 • Activa</p>
+                                <p class="text-white/70 text-xs">Desintoxica y renueva</p>
+                            </div>
+
+                            <!-- REVIVE Coming Soon -->
+                            <div
+                                class="bg-deep-purple/10 backdrop-blur-xl rounded-2xl p-4 border border-deep-purple/20 opacity-60">
+                                <div class="absolute top-2 right-2 w-3 h-3 bg-gray-500 rounded-full"></div>
+                                <div
+                                    class="w-10 h-10 bg-gradient-to-r from-deep-purple to-electric-blue rounded-lg flex items-center justify-center mb-3">
+                                    <i class="fas fa-heart text-white"></i>
+                                </div>
+                                <h4 class="text-white font-bold text-sm mb-1">REVIVE</h4>
+                                <p class="text-deep-purple text-xs font-medium mb-2">Fase 2 • Próximamente</p>
+                                <p class="text-white/50 text-xs">Regenera y restaura</p>
+                            </div>
+
+                            <!-- NUTRIX Coming Soon -->
+                            <div
+                                class="bg-sunset-gold/10 backdrop-blur-xl rounded-2xl p-4 border border-sunset-gold/20 opacity-60">
+                                <div
+                                    class="w-10 h-10 bg-gradient-to-r from-sunset-gold to-warm-orange rounded-lg flex items-center justify-center mb-3">
+                                    <i class="fas fa-seedling text-white"></i>
+                                </div>
+                                <h4 class="text-white font-bold text-sm mb-1">NUTRIX</h4>
+                                <p class="text-sunset-gold text-xs font-medium mb-2">Fase 3 • Próximamente</p>
+                                <p class="text-white/50 text-xs">Fortalece desde células</p>
+                            </div>
+
+                            <!-- AWAKEN Coming Soon -->
+                            <div
+                                class="bg-violet-dream/10 backdrop-blur-xl rounded-2xl p-4 border border-violet-dream/20 opacity-60">
+                                <div
+                                    class="w-10 h-10 bg-gradient-to-r from-violet-dream to-coral-pink rounded-lg flex items-center justify-center mb-3">
+                                    <i class="fas fa-bolt text-white"></i>
+                                </div>
+                                <h4 class="text-white font-bold text-sm mb-1">AWAKEN</h4>
+                                <p class="text-violet-dream text-xs font-medium mb-2">Fase 4 • Próximamente</p>
+                                <p class="text-white/50 text-xs">Despierta tu potencial</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits Quick Preview -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div
+                    class="text-center p-6 rounded-2xl bg-gradient-to-br from-emerald-fresh/10 to-transparent border border-emerald-fresh/20 hover:border-emerald-fresh/40 transition-all duration-300 group">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🔥</div>
+                    <h3 class="text-lg font-bold text-emerald-fresh mb-2">ENERGÍA IMPARABLE</h3>
+                    <p class="text-white/70 text-sm">Sin crashes. Sin cansancio. Solo energía pura y sostenida.</p>
+                </div>
+
+                <div
+                    class="text-center p-6 rounded-2xl bg-gradient-to-br from-warm-orange/10 to-transparent border border-warm-orange/20 hover:border-warm-orange/40 transition-all duration-300 group">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🧠</div>
+                    <h3 class="text-lg font-bold text-warm-orange mb-2">CLARIDAD MENTAL</h3>
+                    <p class="text-white/70 text-sm">Niebla mental eliminada. Enfoque láser en 21 días.</p>
+                </div>
+
+                <div
+                    class="text-center p-6 rounded-2xl bg-gradient-to-br from-coral-pink/10 to-transparent border border-coral-pink/20 hover:border-coral-pink/40 transition-all duration-300 group">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">✨</div>
+                    <h3 class="text-lg font-bold text-coral-pink mb-2">TRANSFORMACIÓN VISIBLE</h3>
+                    <p class="text-white/70 text-sm">Cambios que se ven, se sienten y se miden.</p>
+                </div>
+            </div>
+
+            <!-- Success Story -->
+            <div
+                class="bg-gradient-to-r from-emerald-fresh/10 to-lime-green/5 backdrop-blur-xl rounded-3xl p-8 border border-emerald-fresh/20 md:p-12">
+                <div class="flex flex-col items-center text-center md:flex-row md:text-left md:items-center">
+                    <div class="mb-6 md:w-1/4 md:mb-0 md:mr-8">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                            alt="Carmen - RETOX transformación"
+                            class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-fresh md:w-32 md:h-32">
+                    </div>
+                    <div class="md:w-2/4">
+                        <p class="text-lg text-white font-light mb-4 leading-relaxed md:text-xl">
+                            "RETOX me devolvió la energía que perdí hace años.
+                            <span class="text-emerald-fresh font-semibold">21 días que cambiaron todo.</span>"
+                        </p>
+                        <div class="text-emerald-fresh font-bold">Carmen López</div>
+                        <div class="text-white/70 text-sm">RETOX Fase 1 • Enero 2025</div>
+                    </div>
+                    <div class="mt-6 md:w-1/4 md:mt-0 md:text-right">
+                        <a href="retox.html"
+                            class="inline-flex items-center bg-gradient-to-r from-emerald-fresh to-lime-green text-white px-6 py-3 rounded-xl font-bold hover:shadow-lg hover:shadow-emerald-fresh/40 transition-all duration-300 transform hover:scale-105">
+                            <span class="mr-2">VER MÁS</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-12">
+                <p class="text-white/80 mb-6 max-w-2xl mx-auto">
+                    <span class="text-emerald-fresh font-semibold">Próximo inicio:</span> 1 de febrero 2025
+                    <br>
+                    <span class="text-sm text-white/60">Cupos limitados • Solo 12 guerreras por cohorte</span>
+                </p>
+
+                <div class="flex flex-col gap-4 md:flex-row md:gap-6 md:justify-center">
+                    <a href="retox.html"
+                        class="inline-flex items-center px-10 py-4 bg-gradient-to-r from-emerald-fresh to-lime-green text-white font-black text-lg rounded-2xl transform hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-fresh/40">
+                        <i class="fas fa-rocket mr-3"></i>
+                        DESCUBRIR RETOX
+                    </a>
+
+                    <button
+                        class="inline-flex items-center px-10 py-4 border-2 border-emerald-fresh text-emerald-fresh font-black text-lg rounded-2xl hover:bg-emerald-fresh hover:text-white transition-all duration-300 backdrop-blur-sm">
+                        <i class="fab fa-whatsapp mr-3"></i>
+                        RESERVAR CUPO
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile-First Community Section -->
+    <section id="energia" class="relative py-16 bg-gradient-to-br from-gray-900 to-black md:py-24 lg:py-32">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+            <div class="text-center mb-12 md:mb-20">
+                <h2 class="text-4xl font-black mb-4 md:text-6xl lg:text-7xl">
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-warm-orange via-coral-pink to-sunset-gold animate-soft-glow">
+                        ENERGÍA
+                    </span>
+                    <br>
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-peach via-terracotta to-burgundy animate-soft-glow">
+                        COLECTIVA
+                    </span>
+                </h2>
+            </div>
+
+            <!-- Mobile-First Testimonial -->
+            <div
+                class="bg-gradient-to-r from-warm-orange/10 to-coral-pink/10 backdrop-blur-xl rounded-3xl p-6 border border-warm-orange/20 mb-12 md:p-12">
+                <div class="flex flex-col items-center text-center md:flex-row md:text-left md:items-start">
+                    <div class="mb-6 md:w-1/3 md:mb-0 md:mr-8">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+                            alt="Sofía transformación"
+                            class="w-32 h-32 rounded-full object-cover mx-auto border-4 border-warm-orange md:w-48 md:h-48">
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-lg text-white font-light mb-4 leading-relaxed md:text-2xl md:mb-6">
+                            "VitalBeat no solo cambió mi cuerpo,
+                            <span class="text-warm-orange font-semibold">cambió mi frecuencia de vida.</span>
+                            Ahora irradio energía que antes no sabía que tenía."
+                        </p>
+                        <div class="text-lg font-bold text-coral-pink md:text-xl">Sofía Martínez</div>
+                        <div class="text-white/70 text-sm">Guerrera Transform • 8 meses de evolución</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Community Features Grid -->
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+                <div class="text-center group">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-warm-orange to-sunset-gold rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 md:w-20 md:h-20 md:mb-6">
+                        <i class="fas fa-users text-2xl text-white md:text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 md:text-xl md:mb-4">TRIBU VITAL</h3>
+                    <p class="text-white/70 text-sm leading-relaxed">Una hermandad de mujeres que se potencian
+                        mutuamente</p>
+                </div>
+
+                <div class="text-center group">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-coral-pink to-burgundy rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 md:w-20 md:h-20 md:mb-6">
+                        <i class="fas fa-trophy text-2xl text-white md:text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 md:text-xl md:mb-4">RETOS ÉPICOS</h3>
+                    <p class="text-white/70 text-sm leading-relaxed">Desafíos que transforman límites en superpoderes
+                    </p>
+                </div>
+
+                <div class="text-center group">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-sunset-gold to-peach rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 md:w-20 md:h-20 md:mb-6">
+                        <i class="fas fa-brain text-2xl text-gray-900 md:text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 md:text-xl md:mb-4">SABIDURÍA VITAL</h3>
+                    <p class="text-white/70 text-sm leading-relaxed">Educación que despierta tu poder interior</p>
+                </div>
+
+                <div class="text-center group">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-peach to-terracotta rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 md:w-20 md:h-20 md:mb-6">
+                        <i class="fas fa-heart text-2xl text-white md:text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 md:text-xl md:mb-4">RITUALES</h3>
+                    <p class="text-white/70 text-sm leading-relaxed">Prácticas ancestrales para el alma moderna</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile-First Final CTA -->
+    <section
+        class="relative py-16 bg-gradient-to-br from-terracotta via-gray-900 to-warm-orange flex items-center justify-center md:py-24 lg:py-32 lg:min-h-screen">
+        <!-- Subtle Background Elements -->
+        <div class="absolute inset-0">
+            <div
+                class="absolute top-16 left-8 w-20 h-20 bg-warm-orange/20 rounded-full blur-xl animate-gentle-float md:top-32 md:left-20 md:w-32 md:h-32">
+            </div>
+            <div class="absolute bottom-16 right-8 w-24 h-24 bg-coral-pink/20 rounded-full blur-xl animate-gentle-float md:bottom-32 md:right-20 md:w-40 md:h-40"
+                style="animation-delay: -3s;"></div>
+        </div>
+
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl font-black mb-6 leading-tight md:text-6xl lg:text-8xl lg:mb-8">
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-white via-warm-orange to-coral-pink animate-soft-glow">
+                    TU MOMENTO
+                </span>
+                <br>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-coral-pink via-sunset-gold to-white animate-soft-glow">
+                    ES AHORA
+                </span>
+            </h2>
+
+            <p class="text-lg text-white/90 mb-8 leading-relaxed md:text-xl lg:text-2xl lg:mb-12">
+                No esperes el lunes. No esperes enero.
+                <span class="text-warm-orange font-bold">Tu transformación comienza con una decisión.</span>
+            </p>
+
+            <!-- Mobile-First CTA Buttons -->
+            <div class="flex flex-col gap-4 mb-8 md:flex-row md:gap-6 md:justify-center md:mb-12">
+                <button
+                    class="w-full px-8 py-4 bg-gradient-to-r from-warm-orange to-sunset-gold text-white font-black text-lg rounded-2xl transform hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-warm-orange/40 md:w-auto md:px-12 md:py-6 md:text-xl">
+                    <i class="fas fa-rocket mr-3"></i>
+                    COMENZAR MI EVOLUCIÓN
+                </button>
+
+                <button
+                    class="w-full px-8 py-4 border-2 border-white text-white font-black text-lg rounded-2xl hover:bg-white hover:text-gray-900 transition-all duration-300 backdrop-blur-sm md:w-auto md:px-12 md:py-6 md:text-xl">
+                    <i class="fab fa-whatsapp mr-3 text-green-400"></i>
+                    CONECTAR AHORA
+                </button>
+            </div>
+
+            <!-- Location Badge -->
+            <div
+                class="inline-flex items-center bg-white/10 backdrop-blur-xl rounded-full px-6 py-3 border border-white/20 md:px-8 md:py-4">
+                <i class="fas fa-map-marker-alt text-warm-orange mr-3"></i>
+                <span class="text-white font-semibold text-sm md:text-base">Próximamente en La Calma y Paseos del Sol •
+                    Guadalajara</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile-First Footer -->
+    <footer class="bg-black/95 backdrop-blur-xl border-t border-warm-orange/20 py-12 md:py-16">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12">
+                <div class="text-center md:text-left">
+                    <h3
+                        class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-warm-orange to-coral-pink mb-4">
+                        VitalBeat
+                    </h3>
+                    <p class="text-white/70 mb-6 leading-relaxed text-sm">
+                        El primer estudio de transformación integral en Guadalajara.
+                        Donde tu energía encuentra su verdadero ritmo.
+                    </p>
+                    <div class="flex justify-center space-x-4 md:justify-start">
+                        <a href="#"
+                            class="w-10 h-10 bg-gradient-to-r from-warm-orange to-sunset-gold rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gradient-to-r from-coral-pink to-burgundy rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                            <i class="fab fa-tiktok text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gradient-to-r from-sunset-gold to-peach rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                            <i class="fab fa-youtube text-gray-900"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center md:text-left">
+                    <h4 class="text-lg font-bold text-white mb-4 md:text-xl md:mb-6">Experiencias</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-white/70 hover:text-warm-orange transition-colors">Pilates
+                                Consciente</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-coral-pink transition-colors">Kickboxing
+                                Explosivo</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-sunset-gold transition-colors">Escáner
+                                Cuántico</a></li>
+                        <li><a href="#" class="text-white/70 hover:text-peach transition-colors">Nutrición Celular</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="text-center md:text-left">
+                    <h4 class="text-lg font-bold text-white mb-4 md:text-xl md:mb-6">Conéctate</h4>
+                    <ul class="space-y-3 text-white/70 text-sm">
+                        <li class="flex items-center justify-center md:justify-start">
+                            <i class="fas fa-map-marker-alt mr-3 text-warm-orange"></i>
+                            La Calma / Paseos del Sol, Guadalajara
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start">
+                            <i class="fab fa-whatsapp mr-3 text-green-400"></i>
+                            +52 33 1234 5678
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start">
+                            <i class="fas fa-envelope mr-3 text-coral-pink"></i>
+                            hola@vitalbeat.mx
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-warm-orange/20 mt-8 pt-6 text-center md:mt-12 md:pt-8">
+                <p class="text-white/50 text-sm">
+                    &copy; 2025 VitalBeat. Una revolución en bienestar integral.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enhanced Mobile WhatsApp Button -->
+    <a href="https://wa.me/5233123456789?text=✨%20Hola%20VitalBeat%21%20Estoy%20lista%20para%20transformar%20mi%20energía.%20Quiero%20conocer%20más%20sobre%20la%20experiencia%20y%20agendar%20mi%20primera%20sesión."
+        target="_blank" class="fixed bottom-4 right-4 z-50 group md:bottom-8 md:right-8">
+        <div class="relative">
+            <div class="absolute inset-0 bg-green-500 rounded-full blur-lg opacity-40 animate-pulse"></div>
+            <div
+                class="relative w-14 h-14 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center text-white text-xl hover:scale-110 transition-all duration-300 shadow-xl md:w-16 md:h-16 md:text-2xl">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+        </div>
+        <!-- Tooltip -->
+        <div
+            class="absolute -top-12 right-0 bg-gray-900/90 text-white px-3 py-2 rounded-lg text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap md:-top-14 md:text-sm">
+            Comienza tu transformación ✨
+        </div>
+    </a>
+
+    <!-- Enhanced Mobile-First JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Counter animation with intersection observer
+        let countersAnimated = false;
+
+        function animateCounters() {
+            if (countersAnimated) return;
+            countersAnimated = true;
+
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                let current = 0;
+                const increment = target / 30; // Slower animation
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    counter.textContent = Math.floor(current);
+
+                    if (current >= target) {
+                        counter.textContent = target;
+                        clearInterval(timer);
+                    }
+                }, 100);
+            });
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -10% 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-up');
+
+                    // Trigger counter animation when hero is visible
+                    if (entry.target.id === 'inicio') {
+                        setTimeout(animateCounters, 1000);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Scroll indicator functionality
+        document.querySelector('.scroll-indicator')?.addEventListener('click', () => {
+            document.querySelector('#experiencia').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Enhanced navbar background on scroll
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('nav');
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > 50) {
+                navbar.style.background = 'rgba(17, 24, 39, 0.95)';
+                navbar.style.backdropFilter = 'blur(20px)';
+                navbar.style.borderColor = 'rgba(255, 120, 73, 0.3)';
+            } else {
+                navbar.style.background = 'rgba(17, 24, 39, 0.8)';
+                navbar.style.backdropFilter = 'blur(20px)';
+                navbar.style.borderColor = 'rgba(255, 120, 73, 0.2)';
+            }
+
+            // Hide navbar on scroll down (mobile)
+            if (window.innerWidth <= 768) {
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    navbar.style.transform = 'translateY(0)';
+                }
+            }
+
+            lastScrollY = currentScrollY;
+        });
+
+        // Touch-friendly hover effects for mobile
+        if (window.innerWidth <= 768) {
+            document.querySelectorAll('.group').forEach(element => {
+                element.addEventListener('touchstart', () => {
+                    element.classList.add('hover');
+                });
+
+                element.addEventListener('touchend', () => {
+                    setTimeout(() => {
+                        element.classList.remove('hover');
+                    }, 150);
+                });
+            });
+        }
+
+        // Preload critical images
+        const criticalImages = [
+            'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+        ];
+
+        criticalImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        // Performance optimization: Lazy load non-critical images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazy');
+                            imageObserver.unobserve(img);
+                        }
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Add loading states
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+
+</html>>
