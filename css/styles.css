@@ -1,90 +1,131 @@
-/* Subtle animations */
-@keyframes gentleFloat {
+* {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Animations */
+@keyframes float {
   0%,
   100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-20px) rotate(180deg);
   }
 }
 
-@keyframes softGlow {
+@keyframes pulse {
   0%,
   100% {
-    text-shadow: 0 0 10px rgba(255, 120, 73, 0.3);
+    opacity: 0.3;
+    transform: scale(1);
   }
   50% {
-    text-shadow: 0 0 20px rgba(255, 107, 157, 0.5),
-      0 0 30px rgba(255, 120, 73, 0.3);
+    opacity: 0.6;
+    transform: scale(1.1);
   }
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.5;
+    filter: blur(40px);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  50% {
+    opacity: 0.8;
+    filter: blur(60px);
   }
 }
 
-.animate-gentle-float {
-  animation: gentleFloat 8s ease-in-out infinite;
-}
-
-.animate-soft-glow {
-  animation: softGlow 3s ease-in-out infinite alternate;
-}
-
-.animate-fade-up {
-  animation: fadeUp 0.8s ease-out;
-}
-
-.warm-particle {
+.floating-element {
   position: absolute;
-  border-radius: 50%;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 120, 73, 0.1),
-    rgba(255, 107, 157, 0.1)
-  );
+  animation: float 6s ease-in-out infinite;
+  opacity: 0.1;
+  pointer-events: none;
 }
 
-.warm-particle-1 {
-  top: 15%;
-  left: 10%;
-  width: 60px;
-  height: 60px;
-  animation: gentleFloat 12s ease-in-out infinite;
+.pulse-element {
+  animation: pulse 3s ease-in-out infinite;
 }
 
-.warm-particle-2 {
-  top: 60%;
-  right: 15%;
-  width: 80px;
-  height: 80px;
-  animation: gentleFloat 15s ease-in-out infinite reverse;
+.glow-element {
+  animation: glow 4s ease-in-out infinite;
 }
 
-.warm-particle-3 {
-  bottom: 20%;
-  left: 60%;
-  width: 40px;
-  height: 40px;
-  animation: gentleFloat 10s ease-in-out infinite;
+/* Loading */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+.loader.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
-/* Enhanced mobile scrollbar */
+/* Progress bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff7849, #ff6b9d, #ffa726, #a855f7);
+  width: 0%;
+  z-index: 101;
+  transition: width 0.3s ease;
+}
+
+/* Reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile menu */
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+/* CTA animations */
+@keyframes ctaPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+}
+
+.cta-pulse {
+  animation: ctaPulse 2s infinite;
+}
+
+/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -93,71 +134,10 @@ html {
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, #ff7849, #ff6b9d);
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
-/* Focus states for accessibility */
-button:focus,
-a:focus {
-  outline: 2px solid #ff7849;
-  outline-offset: 2px;
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
 }
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  .text-white\/70 {
-    color: rgb(255 255 255 / 0.9);
-  }
-  .text-white\/80 {
-    color: rgb(255 255 255 / 0.95);
-  }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  .animate-gentle-float,
-  .animate-soft-glow,
-  .animate-pulse {
-    animation: none;
-  }
-}
-
-/* Mobile optimizations */
-@media (max-width: 768px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-
-/* Navbar transition */
-nav {
-  transition: all 0.3s ease;
-}
-
-/* Additional styles for RETOX section */
-.emerald-fresh { color: #00c896; }
-.deep-purple { color: #6366f1; }
-.electric-blue { color: #3b82f6; }
-.lime-green { color: #84cc16; }
-.violet-dream { color: #a855f7; }
-
-/* Hover effects for phase cards */
-.phase-card-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 200, 150, 0.15);
-}
-
-/* Pulse animation for active indicator */
-@keyframes pulse-emerald {
-    0%, 100% { 
-        box-shadow: 0 0 0 0 rgba(0, 200, 150, 0.7);
-    }
-    50% { 
-        box-shadow: 0 0 0 8px rgba(0, 200, 150, 0);
-    }
-}
-
-.animate-pulse-emerald {
-    animation: pulse-emerald 2s infinite;
-} 
