@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa RETOX - VitalBeat</title>
+    <meta name="description" content="RETOX: Programa de transformación integral de VitalBeat. 4 fases en 84-99 días. Pilates + Kickboxing + Nutrición VitalHealth + Comunidad.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'phase-1': '#00c896',
+                        'phase-2': '#6366f1', 
+                        'phase-3': '#ff7849',
+                        'phase-4': '#a855f7',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/retox.css">
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+    
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold mb-4">RETOX</h2>
+            <div class="w-32 h-1 bg-white mx-auto rounded-full overflow-hidden">
+                <div class="h-full bg-phase-1 animate-pulse"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Fixed Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-xl border-b border-white/10">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold">
+                    VitalBeat
+                </a>
+                
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#experiencia" class="nav-link text-white/80">Experiencia</a>
+                    <a href="index.html#transformacion" class="nav-link text-white/80">Paquetes</a>
+                    <a href="#programa-retox" class="nav-link text-phase-1 font-semibold">Programa RETOX</a>
+                    <a href="#waitlist" class="nav-link text-white/80">Únete</a>
+                    <a href="https://wa.me/5233123456789?text=Quiero%20información%20sobre%20el%20programa%20RETOX%20de%20VitalBeat" 
+                       class="bg-gradient-to-r from-phase-1 to-phase-4 text-white px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform">
+                        Más Info
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" id="mobileMenuBtn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="fixed inset-y-0 right-0 w-80 bg-black/95 backdrop-blur-xl z-50 mobile-menu p-8" id="mobileMenu">
+        <button class="absolute top-4 right-4 text-2xl" id="closeMobileMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="flex flex-col space-y-6 mt-16">
+            <a href="index.html#experiencia" class="text-2xl text-white/80">Experiencia</a>
+            <a href="index.html#transformacion" class="text-2xl text-white/80">Paquetes</a>
+            <a href="#programa-retox" class="text-2xl font-bold text-phase-1">Programa RETOX</a>
+            <a href="#waitlist" class="text-2xl text-white/80">Únete</a>
+            <a href="https://wa.me/5233123456789?text=Quiero%20información%20sobre%20el%20programa%20RETOX%20de%20VitalBeat" 
+               class="bg-gradient-to-r from-phase-1 to-phase-4 text-white px-6 py-3 rounded-full font-bold text-center">
+                Más Info
+            </a>
+        </div>
+    </div>
+
+    <!-- HERO Section -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden" id="programa-retox">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute top-20 left-20 w-64 h-64 bg-phase-1 rounded-full filter blur-3xl animate-pulse"></div>
+                <div class="absolute bottom-20 right-20 w-64 h-64 bg-phase-4 rounded-full filter blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-phase-2 rounded-full filter blur-3xl animate-pulse opacity-10" style="animation-delay: 2s;"></div>
+            </div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-6xl mx-auto">
+            <!-- Program Badge -->
+            <div class="inline-flex items-center bg-white/10 backdrop-blur rounded-full px-6 py-3 mb-8 border border-white/20">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=40&h=40&fit=crop" alt="VitalBeat" class="w-8 h-8 rounded-full mr-3">
+                <span class="text-white font-bold text-sm">PROGRAMA VITALBEAT</span>
+            </div>
+
+            <h1 class="text-6xl md:text-8xl font-black mb-6 slide-in-left">
+                PROGRAMA<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-phase-1 via-phase-2 to-phase-4">
+                    RETOX
+                </span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto fade-in-up" style="animation-delay: 0.3s;">
+                Reto de transformación integral en 84-99 días.<br>
+                <span class="text-phase-1 font-bold">Actividad física • Suplementación con nanotecnología y adaptógenos • Comunidad que te apoya</span>
+            </p>
+
+            <!-- Method Section -->
+            <div class="bg-white/5 backdrop-blur-xl rounded-3xl p-8 mb-8 border border-white/10 max-w-3xl mx-auto fade-in-up" style="animation-delay: 0.6s;">
+                <h3 class="text-2xl font-bold mb-6">4 Fases de Transformación</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div>
+                        <div class="text-4xl mb-3">🧼</div>
+                        <div class="text-sm font-bold text-phase-1">DETOX</div>
+                        <div class="text-xs text-gray-400">Días 1-21</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl mb-3">🔄</div>
+                        <div class="text-sm font-bold text-phase-2">RESTAURA</div>
+                        <div class="text-xs text-gray-400">Días 22-42</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl mb-3">🌱</div>
+                        <div class="text-sm font-bold text-phase-3">NUTRE</div>
+                        <div class="text-xs text-gray-400">Días 43-63</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl mb-3">⚡</div>
+                        <div class="text-sm font-bold text-phase-4">MANTÉN</div>
+                        <div class="text-xs text-gray-400">Días 64-84</div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-6 text-sm text-gray-400">
+                    <p>+ Períodos de descanso entre fases</p>
+                    <p class="text-phase-1 font-semibold">Total: 84-99 días de transformación</p>
+                </div>
+
+                <!-- VitalBeat Components -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 text-xs">
+                    <div class="bg-white/5 rounded-lg p-3 text-center">
+                        <i class="fas fa-dumbbell text-warm-orange text-xl mb-2"></i>
+                        <h4 class="font-bold">Pilates</h4>
+                        <p class="text-gray-400">Consciente</p>
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-3 text-center">
+                        <i class="fas fa-fire text-coral-pink text-xl mb-2"></i>
+                        <h4 class="font-bold">Kickboxing</h4>
+                        <p class="text-gray-400">Explosivo</p>
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-3 text-center">
+                        <i class="fas fa-leaf text-phase-1 text-xl mb-2"></i>
+                        <h4 class="font-bold">VitalHealth</h4>
+                        <p class="text-gray-400">Personalizado</p>
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-3 text-center">
+                        <i class="fas fa-users text-phase-2 text-xl mb-2"></i>
+                        <h4 class="font-bold">Comunidad</h4>
+                        <p class="text-gray-400">Apoyo total</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center fade-in-up" style="animation-delay: 0.9s;">
+                <a href="#waitlist" class="bg-gradient-to-r from-phase-1 to-phase-4 text-white px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform cta-pulse">
+                    <i class="fas fa-heart mr-2"></i> Quiero Ser Parte
+                </a>
+                <div class="flex items-center space-x-4 text-sm">
+                    <span class="flex items-center"><i class="fas fa-home text-phase-1 mr-1"></i> Presencial</span>
+                    <span class="flex items-center"><i class="fas fa-laptop text-phase-1 mr-1"></i> Online</span>
+                </div>
+            </div>
+
+            <!-- Teaser Info -->
+            <div class="mt-12 text-gray-400 text-sm fade-in-up" style="animation-delay: 1.2s;">
+                <p>🔒 <strong>Ultra Secreto:</strong> Las 4 fases se revelan solo a miembros VIP</p>
+                <p class="mt-2">🚀 <strong>Lanzamiento:</strong> Abril 2025 • Primera generación exclusiva</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section (Simplified & Mysterious) -->
+    <section id="timeline" class="min-h-screen bg-black flex items-center justify-center py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-5xl md:text-7xl font-black mb-6">
+                    PROGRAMA
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-phase-1 via-phase-2 via-phase-3 to-phase-4">
+                        RETOX
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Reto intensivo de transformación integral de VitalBeat. <br>
+                    <span class="text-phase-1 font-bold">4 fases conectadas + períodos de descanso = 84-99 días épicos</span>
+                </p>
+            </div>
+
+            <!-- Mysterious Timeline -->
+            <div class="max-w-5xl mx-auto">
+                <div class="relative">
+                    <!-- Connection Line -->
+                    <div class="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-phase-1 via-phase-2 via-phase-3 to-phase-4 transform -translate-y-1/2 hidden md:block"></div>
+                    
+                    <!-- Timeline Items -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                        <!-- DETOX -->
+                        <div class="text-center reveal">
+                            <div class="relative">
+                                <div class="w-20 h-20 mx-auto bg-phase-1 rounded-full flex items-center justify-center text-2xl font-bold mb-4 relative z-10">
+                                    🧼
+                                </div>
+                                <h3 class="text-xl font-bold mb-2 text-phase-1">DETOX</h3>
+                                <p class="text-sm text-gray-400">Fase 1 • 21 días</p>
+                                <p class="text-xs mt-2">Limpieza profunda</p>
+                            </div>
+                        </div>
+
+                        <!-- RESTAURA -->
+                        <div class="text-center reveal" style="animation-delay: 0.1s;">
+                            <div class="relative">
+                                <div class="w-20 h-20 mx-auto bg-phase-2 rounded-full flex items-center justify-center text-2xl font-bold mb-4 relative z-10">
+                                    🔄
+                                </div>
+                                <h3 class="text-xl font-bold mb-2 text-phase-2">RESTAURA</h3>
+                                <p class="text-sm text-gray-400">Fase 2 • 21 días</p>
+                                <p class="text-xs mt-2">Regeneración celular</p>
+                            </div>
+                        </div>
+
+                        <!-- NUTRE -->
+                        <div class="text-center reveal" style="animation-delay: 0.2s;">
+                            <div class="relative">
+                                <div class="w-20 h-20 mx-auto bg-phase-3 rounded-full flex items-center justify-center text-2xl font-bold mb-4 relative z-10">
+                                    🌱
+                                </div>
+                                <h3 class="text-xl font-bold mb-2 text-phase-3">NUTRE</h3>
+                                <p class="text-sm text-gray-400">Fase 3 • 21 días</p>
+                                <p class="text-xs mt-2">Fortalecimiento</p>
+                            </div>
+                        </div>
+
+                        <!-- MANTÉN -->
+                        <div class="text-center reveal" style="animation-delay: 0.3s;">
+                            <div class="relative">
+                                <div class="w-20 h-20 mx-auto bg-phase-4 rounded-full flex items-center justify-center text-2xl font-bold mb-4 relative z-10">
+                                    ⚡
+                                </div>
+                                <h3 class="text-xl font-bold mb-2 text-phase-4">MANTÉN</h3>
+                                <p class="text-sm text-gray-400">Fase 4 • 21 días</p>
+                                <p class="text-xs mt-2">Optimización</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flexibility Box -->
+            <div class="mt-16 text-center reveal">
+                <div class="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 max-w-4xl mx-auto">
+                    <i class="fas fa-route text-6xl text-phase-1 mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-6">Elige tu Modalidad RETOX</h3>
+                    
+                    <!-- Comparison Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <!-- Presencial -->
+                        <div class="bg-white/10 rounded-2xl p-6 border border-phase-1/30">
+                            <div class="flex items-center justify-center mb-4">
+                                <i class="fas fa-home text-phase-1 text-3xl mr-3"></i>
+                                <h4 class="text-xl font-bold text-phase-1">PRESENCIAL</h4>
+                            </div>
+                            
+                            <div class="space-y-3 text-sm text-left mb-6">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-phase-1 mr-2 mt-1 text-xs"></i>
+                                    <span>Feedback inmediato de Marifer</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-phase-1 mr-2 mt-1 text-xs"></i>
+                                    <span>Corrección postural en tiempo real</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-phase-1 mr-2 mt-1 text-xs"></i>
+                                    <span>Energía grupal en vivo</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-phase-1 mr-2 mt-1 text-xs"></i>
+                                    <span>Bioescáner + báscula + fotografía</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-venus text-phase-1 mr-2 mt-1 text-xs"></i>
+                                    <span><strong>Solo mujeres</strong> (ambiente de confianza)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="text-2xl font-black text-phase-1 mb-1">Por definir</div>
+                                <div class="text-xs text-gray-400">Precio por fase</div>
+                            </div>
+                        </div>
+
+                        <!-- Online -->
+                        <div class="bg-white/10 rounded-2xl p-6 border border-phase-2/30">
+                            <div class="flex items-center justify-center mb-4">
+                                <i class="fas fa-laptop text-phase-2 text-3xl mr-3"></i>
+                                <h4 class="text-xl font-bold text-phase-2">ONLINE</h4>
+                            </div>
+                            
+                            <div class="space-y-3 text-sm text-left mb-6">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-phase-2 mr-2 mt-1 text-xs"></i>
+                                    <span>Sesiones Live</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-phase-2 mr-2 mt-1 text-xs"></i>
+                                    <span>Grabadas para ver después a tu tiempo.</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-phase-2 mr-2 mt-1 text-xs"></i>
+                                    <span>Chat grupal monitoreado</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-phase-2 mr-2 mt-1 text-xs"></i>
+                                    <span>Flexibilidad de horarios</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-phase-2 mr-2 mt-1 text-xs"></i>
+                                    <span><strong>En GDL:</strong> Bioescáner + báscula + foto</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-camera text-phase-2 mr-2 mt-1 text-xs"></i>
+                                    <span><strong>Fuera GDL:</strong> Báscula + fotografía</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-users text-phase-2 mr-2 mt-1 text-xs"></i>
+                                    <span><strong>Mixto</strong> (hombres y mujeres)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="text-2xl font-black text-phase-2 mb-1">Por definir</div>
+                                <div class="text-xs text-gray-400">Precio por fase</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Common Benefits -->
+                    <div class="bg-white/5 rounded-xl p-4 mb-6">
+                        <h5 class="font-bold text-phase-3 mb-3">✨ Incluido en ambas modalidades:</h5>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+                            <div>• Suplementación VitalHealth</div>
+                            <div>• Seguimiento personalizado</div>
+                            <div>• Comunidad de apoyo</div>
+                            <div>• Plan nutricional por fase</div>
+                        </div>
+                    </div>
+
+                    <p class="text-sm text-gray-400">
+                        <i class="fas fa-info-circle text-phase-1 mr-2"></i>
+                        Puedes cambiar de modalidad entre fases (sujeto a disponibilidad)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-5xl md:text-7xl font-black mb-6">
+                    LISTA DE ESPERA
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-phase-1 to-phase-4">
+                        VIP
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Sé la primera en conocer los secretos de RETOX y asegurar tu lugar 
+                    en la transformación más épica del año.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <!-- Left: Benefits -->
+                    <div class="reveal">
+                        <h3 class="text-3xl font-bold mb-8">Beneficios Exclusivos VIP:</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-heart text-phase-1 text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2">Comunidad Magnética</h4>
+                                    <p class="text-gray-400">Tribu de guerreras con las mismas metas que tú</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-chart-line text-phase-2 text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2">Resultados Medibles</h4>
+                                    <p class="text-gray-400">Bioescáner + báscula + seguimiento fotográfico</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-seedling text-phase-3 text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2">Nutrición Personalizada</h4>
+                                    <p class="text-gray-400">VitalHealth adaptado a tu bioescáner</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-users text-phase-4 text-2xl mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2">Modalidad Híbrida</h4>
+                                    <p class="text-gray-400">Presencial + online + sesiones grabadas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: CTA -->
+                    <div class="reveal" style="animation-delay: 0.3s;">
+                        <div class="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-phase-1/30 text-center">
+                            <i class="fas fa-heart text-6xl text-phase-1 mb-6"></i>
+                            <h3 class="text-2xl font-bold mb-4">¿Lista para Transformarte?</h3>
+                            <p class="text-gray-400 mb-8">
+                                Únete al programa RETOX de VitalBeat y descubre el poder de evolucionar en comunidad. 
+                                Cada fase te acerca más a tu mejor versión.
+                            </p>
+                            
+                            <a href="https://wa.me/5233123456789?text=🌟%20QUIERO%20UNIRME%20AL%20PROGRAMA%20RETOX%20🌟%0A%0ANombre:%0AEdad:%0A¿Qué%20quieres%20transformar%20en%20tu%20vida?" 
+                               class="bg-gradient-to-r from-phase-1 to-phase-4 text-white px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform inline-flex items-center mb-6 cta-pulse">
+                                <i class="fab fa-whatsapp mr-3 text-2xl"></i> 
+                                QUIERO SER PARTE
+                            </a>
+                            
+                            <div class="flex items-center justify-center space-x-4 text-sm text-gray-500">
+                                <span><i class="fas fa-calendar text-phase-1 mr-1"></i> Inicia: Marzo 2025</span>
+                                <span><i class="fas fa-heart text-phase-1 mr-1"></i> Híbrido</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Desire Section -->
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-black mb-6">
+                    TU LUGAR EN LA
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-phase-1 to-phase-4">
+                        TRANSFORMACIÓN
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    El programa RETOX no es solo entrenar, es pertenecer a un movimiento de mujeres 
+                    que se comprometen con su evolución.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Recognition -->
+                <div class="bg-white/5 backdrop-blur rounded-3xl p-8 border border-phase-1/20 text-center reveal">
+                    <div class="w-20 h-20 mx-auto bg-gradient-to-r from-phase-1 to-phase-2 rounded-full flex items-center justify-center text-3xl mb-6">
+                        🏆
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-phase-1">Reconocimiento Real</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Cada logro se celebra. Cada transformación se comparte. 
+                        Tu progreso inspira a otras guerreras en su journey.
+                    </p>
+                </div>
+
+                <!-- Community Power -->
+                <div class="bg-white/5 backdrop-blur rounded-3xl p-8 border border-phase-2/20 text-center reveal" style="animation-delay: 0.1s;">
+                    <div class="w-20 h-20 mx-auto bg-gradient-to-r from-phase-2 to-phase-3 rounded-full flex items-center justify-center text-3xl mb-6">
+                        💪
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-phase-2">Fuerza Colectiva</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Cuando una guerrera avanza, todas avanzamos. 
+                        La energía del grupo te lleva más lejos que sola.
+                    </p>
+                </div>
+
+                <!-- Legacy -->
+                <div class="bg-white/5 backdrop-blur rounded-3xl p-8 border border-phase-3/20 text-center reveal" style="animation-delay: 0.2s;">
+                    <div class="w-20 h-20 mx-auto bg-gradient-to-r from-phase-3 to-phase-4 rounded-full flex items-center justify-center text-3xl mb-6">
+                        ✨
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-phase-3">Legado de Impacto</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Ser parte de RETOX significa ser pionera de un movimiento 
+                        que transformará la vida de miles de mujeres.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Belonging Stats -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
+                <div class="reveal">
+                    <div class="text-4xl font-black text-phase-1 mb-2">100%</div>
+                    <div class="text-sm text-gray-400">Compromiso total</div>
+                </div>
+                <div class="reveal" style="animation-delay: 0.1s;">
+                    <div class="text-4xl font-black text-phase-2 mb-2">1%</div>
+                    <div class="text-sm text-gray-400">De mujeres se animan</div>
+                </div>
+                <div class="reveal" style="animation-delay: 0.2s;">
+                    <div class="text-4xl font-black text-phase-3 mb-2">∞</div>
+                    <div class="text-sm text-gray-400">Impacto en tu vida</div>
+                </div>
+                <div class="reveal" style="animation-delay: 0.3s;">
+                    <div class="text-4xl font-black text-phase-4 mb-2">TÚ</div>
+                    <div class="text-sm text-gray-400">Decides si eres parte</div>
+                </div>
+            </div>
+
+            <!-- Call to Belonging -->
+            <div class="mt-16 text-center reveal">
+                <div class="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-4">¿Tienes lo que se necesita?</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        RETOX no es para todas. Es para mujeres que están listas para:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm mb-8">
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-check-circle text-phase-1 mr-2"></i>
+                            <span>Comprometerse 84-99 días</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-check-circle text-phase-1 mr-2"></i>
+                            <span>Inspirar a otras mujeres</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-check-circle text-phase-1 mr-2"></i>
+                            <span>Celebrar cada pequeño logro</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-check-circle text-phase-1 mr-2"></i>
+                            <span>Ser parte de algo grande</span>
+                        </div>
+                    </div>
+                    <p class="text-phase-1 font-bold text-lg">
+                        Si sientes que es tu momento, ya sabes qué hacer.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">VitalBeat RETOX</h3>
+                    <p class="text-gray-400 text-sm">La evolución llega pronto • Lista VIP abierta</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-tiktok text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 VitalBeat. La transformación más épica viene pronto.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5233123456789?text=🔥%20QUIERO%20ACCESO%20VIP%20A%20RETOX%20🔥" 
+       target="_blank"
+       class="fixed bottom-6 right-6 bg-gradient-to-r from-phase-1 to-phase-4 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl hover:scale-110 transition-transform shadow-lg z-40 animate-pulse">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="js/retox.js"></script>
+</body>
+</html>

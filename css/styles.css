@@ -142,8 +142,14 @@ html {
   scroll-behavior: smooth;
 }
 
-@media (max-width: 530px) {
+@media (max-width: 649px) {
   html {
     overflow-x: hidden !important;
+  }
+  .hidden-sm {
+    display: none;
+  }
+  .grid-cols-3{
+    grid-template-columns: repeat(1, minmax(0,1fr));
   }
 }
