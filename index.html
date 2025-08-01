@@ -47,7 +47,7 @@
     <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
 
-    <!-- Fixed Header (Matching RETOX style) -->
+    <!-- Fixed Header -->
     <header class="fixed top-0 left-0 w-full z-50 bg-black/50 backdrop-blur-xl border-b border-white/10">
         <nav class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
@@ -59,13 +59,13 @@
                 
                 <!-- Desktop Nav -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#experiencia" class="text-white/80 hover:text-warm-orange transition-colors font-medium">Experiencia</a>
-                    <a href="#transformacion" class="text-white/80 hover:text-coral-pink transition-colors font-medium">Paquetes</a>
+                    <a href="#fundadoras" class="text-white/80 hover:text-warm-orange transition-colors font-medium">Fundadoras</a>
+                    <a href="#experiencia" class="text-white/80 hover:text-coral-pink transition-colors font-medium">Experiencia</a>
                     <a href="#retox" class="text-white/80 hover:text-phase-1 transition-colors font-medium">RETOX</a>
-                    <a href="#comunidad" class="text-white/80 hover:text-sunset-gold transition-colors font-medium">Comunidad</a>
-                    <a href="#transformacion" 
+                    <a href="#transformacion" class="text-white/80 hover:text-sunset-gold transition-colors font-medium">Paquetes</a>
+                    <a href="#fundadoras" 
                        class="bg-gradient-to-r from-warm-orange to-coral-pink text-white px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform">
-                        Comenzar Ahora
+                        Ser Fundadora
                     </a>
                 </div>
 
@@ -83,13 +83,13 @@
             <i class="fas fa-times"></i>
         </button>
         <div class="flex flex-col space-y-6 mt-16">
-            <a href="#experiencia" class="text-2xl hover:text-warm-orange transition-colors">Experiencia</a>
-            <a href="#transformacion" class="text-2xl hover:text-coral-pink transition-colors">Paquetes</a>
+            <a href="#fundadoras" class="text-2xl hover:text-warm-orange transition-colors">Fundadoras</a>
+            <a href="#experiencia" class="text-2xl hover:text-coral-pink transition-colors">Experiencia</a>
             <a href="#retox" class="text-2xl hover:text-phase-1 transition-colors">RETOX</a>
-            <a href="#comunidad" class="text-2xl hover:text-sunset-gold transition-colors">Comunidad</a>
-            <a href="#transformacion" 
+            <a href="#transformacion" class="text-2xl hover:text-sunset-gold transition-colors">Paquetes</a>
+            <a href="#fundadoras" 
                class="bg-gradient-to-r from-warm-orange to-coral-pink text-white px-6 py-3 rounded-full font-bold text-center">
-                Comenzar Ahora
+                Ser Fundadora
             </a>
         </div>
     </div>
@@ -110,38 +110,54 @@
 
         <div class="relative z-10 text-center px-4 max-w-6xl mx-auto">
             <div class="mb-8">
-                <h1 class="text-6xl md:text-8xl font-black mb-6">
-                    TU ENERGÍA<br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-warm-orange via-coral-pink to-sunset-gold">
-                        NUNCA FUE TAN PODEROSA
-                    </span>
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                    No somos un gimnasio. Somos el lugar donde tu cuerpo y mente 
-                    encuentran su <span class="text-warm-orange font-bold">ritmo perfecto</span>.
+                <!-- Brand Statement -->
+                <div class="mb-8">
+                    <h1 class="text-4xl md:text-6xl font-black mb-4">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-warm-orange to-coral-pink">
+                            VITALBEAT
+                        </span>
+                    </h1>
+                    <p class="text-2xl md:text-3xl font-light text-gray-200 mb-2">TE LLEVA A TI...</p>
+                    <h2 class="text-5xl md:text-7xl font-black text-white">
+                        TU ENERGÍA NUNCA FUE<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-warm-orange via-coral-pink to-sunset-gold">
+                            TAN PODEROSA
+                        </span>
+                    </h2>
+                </div>
+                
+                <!-- Urgency Badge -->
+                <div class="inline-flex items-center bg-warm-orange/20 backdrop-blur rounded-full px-6 py-2 mb-6">
+                    <i class="fas fa-fire text-warm-orange mr-3"></i>
+                    <span class="text-warm-orange font-bold">BUSCAMOS 15 FUNDADORAS</span>
+                </div>
+                
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+                    Somos el lugar donde mujeres extraordinarias escriben una nueva historia. 
+                    <span class="text-warm-orange font-bold">¿Lista para ser parte del origen?</span>
                 </p>
             </div>
             
             <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-12">
-                <a href="#transformacion" 
-                   class="bg-gradient-to-r from-warm-orange to-coral-pink text-white px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform cta-pulse">
-                    <i class="fas fa-sparkles mr-2"></i> Descubre tu Paquete
+                <a onclick="openFounderModal()" 
+                   class="bg-gradient-to-r from-warm-orange to-coral-pink text-white px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform cta-pulse cursor-pointer">
+                    <i class="fas fa-crown mr-2"></i> SER FUNDADORA
                 </a>
-                <a href="#retox" 
+                <a href="#experiencia" 
                    class="border-2 border-white/50 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-black transition-all">
-                    <i class="fas fa-rocket mr-2"></i> Conoce RETOX
+                    <i class="fas fa-play mr-2"></i> Ver Experiencia
                 </a>
             </div>
 
-            <!-- Stats -->
+            <!-- Counter Stats -->
             <div class="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
                 <div class="text-center">
-                    <div class="text-4xl font-black text-warm-orange mb-2">8</div>
-                    <div class="text-sm text-gray-400">MAX POR CLASE</div>
+                    <div class="text-4xl font-black text-warm-orange mb-2">15</div>
+                    <div class="text-sm text-gray-400">FUNDADORAS ÚNICAS</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-4xl font-black text-coral-pink mb-2">100%</div>
-                    <div class="text-sm text-gray-400">PERSONALIZADO</div>
+                    <div class="text-4xl font-black text-coral-pink mb-2">12 AGO</div>
+                    <div class="text-sm text-gray-400">PRE-LANZAMIENTO</div>
                 </div>
                 <div class="text-center">
                     <div class="text-4xl font-black text-sunset-gold mb-2">360°</div>
@@ -153,6 +169,219 @@
         <!-- Scroll indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
             <i class="fas fa-chevron-down text-2xl text-white/50"></i>
+        </div>
+    </section>
+
+    <!-- FUNDADORAS EXCLUSIVAS Section -->
+    <section id="fundadoras" class="py-20 bg-gradient-to-b from-black via-purple-900/20 to-black relative overflow-hidden">
+        <!-- Background effects -->
+        <div class="absolute inset-0">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-warm-orange rounded-full filter blur-3xl opacity-10"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-coral-pink rounded-full filter blur-3xl opacity-10"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <div class="inline-flex items-center bg-warm-orange/20 backdrop-blur rounded-full px-6 py-2 mb-6">
+                    <i class="fas fa-crown text-warm-orange mr-3"></i>
+                    <span class="text-warm-orange font-bold">EXCLUSIVO FUNDADORAS</span>
+                </div>
+                <h2 class="text-4xl md:text-6xl font-black mb-6">
+                    ¿QUÉ PASA CUANDO UNA MUJER <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-warm-orange via-coral-pink to-sunset-gold">
+                        DECIDE QUE MERECE MÁS?
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    Las primeras 15 mujeres no solo vivirán la transformación más intensa de Guadalajara...
+                    <span class="text-warm-orange font-bold">la crearán con nosotros.</span>
+                </p>
+            </div>
+
+            <!-- The Problem -->
+            <div class="bg-white/5 backdrop-blur rounded-3xl p-8 max-w-4xl mx-auto mb-12 border border-gray-600 reveal">
+                <h3 class="text-2xl font-bold mb-6 text-center">Sabemos exactamente cómo te sientes...</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-times-circle text-red-400 text-xl mr-4 mt-1"></i>
+                            <p class="text-gray-300">Te levantas sin energía, aunque hayas dormido 8 horas</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-times-circle text-red-400 text-xl mr-4 mt-1"></i>
+                            <p class="text-gray-300">Has probado todo pero nada te da resultados duraderos</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-times-circle text-red-400 text-xl mr-4 mt-1"></i>
+                            <p class="text-gray-300">Los gimnasios te aburren y te hacen sentir como un número más</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-times-circle text-red-400 text-xl mr-4 mt-1"></i>
+                            <p class="text-gray-300">Sientes que perdiste conexión contigo misma</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-times-circle text-red-400 text-xl mr-4 mt-1"></i>
+                            <p class="text-gray-300">Quieres algo más profundo que solo "hacer ejercicio"</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-times-circle text-red-400 text-xl mr-4 mt-1"></i>
+                            <p class="text-gray-300">Deseas pertenecer a algo que realmente te transforme</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Solution -->
+            <div class="bg-gradient-to-r from-warm-orange/10 to-coral-pink/10 backdrop-blur rounded-3xl p-8 max-w-4xl mx-auto mb-12 border border-warm-orange/30 reveal">
+                <h3 class="text-2xl font-bold mb-6 text-center">Por eso estamos creando algo que nunca existió...</h3>
+                <div class="text-center">
+                    <p class="text-lg text-gray-200 mb-6">
+                        Un lugar donde <span class="text-warm-orange font-bold">Pilates + Kickboxing + Tecnología + Nutrición Celular + Círculos de Mujeres</span> 
+                        se fusionan para crear la experiencia de transformación más completa de México.
+                    </p>
+                    <p class="text-xl font-bold text-coral-pink">
+                        Pero necesitamos a las mujeres correctas para co-crearlo.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Founder Profiles -->
+            <div class="max-w-5xl mx-auto mb-12 reveal">
+                <h3 class="text-3xl font-bold text-center mb-8">¿Eres una Fundadora VitalBeat?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white/5 backdrop-blur rounded-2xl p-6 border border-warm-orange/20">
+                        <h4 class="text-xl font-bold text-warm-orange mb-4">✨ Eres Fundadora si...</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-warm-orange mr-3 mt-1"></i>
+                                <span>Sabes que mereces algo extraordinario, no lo ordinario</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-warm-orange mr-3 mt-1"></i>
+                                <span>Quieres ser parte del origen de algo revolucionario</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-warm-orange mr-3 mt-1"></i>
+                                <span>Buscas transformación real, no solo "ponerte en forma"</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-warm-orange mr-3 mt-1"></i>
+                                <span>Valoras la calidad sobre la cantidad</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-warm-orange mr-3 mt-1"></i>
+                                <span>Quieres pertenecer a una tribu de mujeres poderosas</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur rounded-2xl p-6 border border-coral-pink/20">
+                        <h4 class="text-xl font-bold text-coral-pink mb-4">🚫 NO eres Fundadora si...</h4>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mr-3 mt-1"></i>
+                                <span>Solo buscas el precio más barato</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mr-3 mt-1"></i>
+                                <span>Quieres resultados sin comprometerte</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mr-3 mt-1"></i>
+                                <span>Prefieres entrenar sola, sin comunidad</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mr-3 mt-1"></i>
+                                <span>No crees en el poder de la transformación integral</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mr-3 mt-1"></i>
+                                <span>Solo quieres una rutina más, no una nueva vida</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Founder Package - Month 1 -->
+            <div class="max-w-2xl mx-auto reveal">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gradient-to-br from-warm-orange/20 to-coral-pink/20 rounded-3xl blur-xl"></div>
+                    <div class="relative bg-black/80 backdrop-blur rounded-3xl p-8 border border-warm-orange/50">
+                        <div class="text-center mb-6">
+                            <div class="inline-flex items-center bg-warm-orange/20 backdrop-blur rounded-full px-4 py-2 mb-4">
+                                <i class="fas fa-crown text-warm-orange mr-2"></i>
+                                <span class="text-sm font-bold">FUNDADORA ORIGINAL</span>
+                            </div>
+                            <h3 class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-warm-orange to-coral-pink mb-2">
+                                PRIMER MES ÚNICAMENTE
+                            </h3>
+                            <div class="text-6xl font-black mb-2">$999</div>
+                            <p class="text-gray-400">por 3 meses | precio bloqueado 2 AÑOS</p>
+                            <div class="bg-red-500/20 border border-red-500/50 rounded-xl p-3 mt-4">
+                                <p class="text-red-300 text-sm font-bold">
+                                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                                    Solo quedan 8 espacios de los 15 originales
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center justify-between p-3 bg-white/5 rounded-xl">
+                                <span class="text-sm">12 clases grupales premium (máx 8 personas)</span>
+                                <span class="text-warm-orange text-sm font-bold">$1,400 valor</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-white/5 rounded-xl">
+                                <span class="text-sm">Bioescáner mensual de por vida</span>
+                                <span class="text-coral-pink text-sm font-bold">$600/mes valor</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-white/5 rounded-xl">
+                                <span class="text-sm">Acceso VitalCircles exclusivos</span>
+                                <span class="text-sunset-gold text-sm font-bold">INVALUABLE</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-white/5 rounded-xl">
+                                <span class="text-sm">Badge "Fundadora Original" + sorpresas</span>
+                                <span class="text-peach text-sm font-bold">ÚNICA</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-gradient-to-r from-warm-orange/20 to-coral-pink/20 rounded-xl border border-warm-orange/30">
+                                <span class="text-sm font-bold">Tu voz en la creación de VitalBeat</span>
+                                <span class="text-white text-sm font-bold">PRICELESS</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-warm-orange/20 to-coral-pink/20 rounded-2xl p-4 mb-6">
+                            <p class="text-center text-sm">
+                                <i class="fas fa-clock text-warm-orange mr-2"></i>
+                                <span class="font-bold">Después del 12 de septiembre:</span> 
+                                precio sube + solo 1 año bloqueado + menos beneficios
+                            </p>
+                        </div>
+
+                        <a onclick="openFounderModal()" 
+                           class="block text-center bg-gradient-to-r from-warm-orange to-coral-pink text-white py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform cta-pulse cursor-pointer">
+                            <i class="fas fa-crown mr-2"></i> SER FUNDADORA ORIGINAL
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alternative for Month 2-3 -->
+            <div class="max-w-2xl mx-auto mt-8 reveal opacity-75">
+                <div class="bg-white/5 backdrop-blur rounded-3xl p-6 border border-gray-600">
+                    <div class="text-center">
+                        <h4 class="text-lg font-bold text-gray-300 mb-2">¿Llegas después del primer mes?</h4>
+                        <p class="text-sm text-gray-400 mb-4">
+                            Aún puedes ser fundadora con $999 por 1 año<br>
+                            <span class="text-xs">(Espacios limitados hasta nov 12)</span>
+                        </p>
+                        <a href="https://wa.me/526221424577?text=Hola%20VitalBeat%20💪%0A%0AQuiero%20información%20sobre%20ser%20fundadora%20en%20el%20segundo%20periodo.%20%0A%0A¿Aún%20hay%20espacios%20disponibles%3F" 
+                           class="inline-block bg-gray-700 text-white px-6 py-2 rounded-full text-sm hover:bg-gray-600 transition-colors">
+                            Información Fundadora Mes 2-3
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -255,124 +484,6 @@
         </div>
     </section>
 
-    <!-- TRANSFORMACIÓN (Packages) Section -->
-    <section id="transformacion" class="py-20 bg-black">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-4xl md:text-7xl font-black mb-6">
-                    ELIGE TU
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-coral-pink to-sunset-gold">
-                        TRANSFORMACIÓN
-                    </span>
-                </h2>
-                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                    Cada paquete es un universo diseñado para tu evolución personal
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <!-- Discover -->
-                <div class="relative group reveal">
-                    <div class="absolute inset-0 bg-gradient-to-br from-warm-orange/10 to-sunset-gold/10 rounded-3xl blur-xl"></div>
-                    <div class="relative bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-warm-orange/30 hover:border-warm-orange/60 transition-all hover:scale-105">
-                        <h3 class="text-2xl font-bold text-warm-orange mb-4">DISCOVER</h3>
-                        <div class="text-4xl font-black mb-2">$1,200</div>
-                        <p class="text-gray-400 mb-6">Tu primer paso hacia la transformación</p>
-                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-warm-orange mr-3"></i>
-                                8 sesiones de despertar
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-warm-orange mr-3"></i>
-                                Escáner inicial revelador
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-warm-orange mr-3"></i>
-                                Comunidad de guerreras
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-warm-orange mr-3"></i>
-                                Acceso a retos mensuales
-                            </li>
-                        </ul>
-                        <a href="https://wa.me/5233123456789?text=Hola!%20Me%20interesa%20el%20paquete%20DISCOVER" 
-                           class="block text-center bg-gradient-to-r from-warm-orange to-sunset-gold text-white py-3 rounded-full font-bold hover:scale-105 transition-transform">
-                            DESPERTAR
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Transform (Featured) -->
-                <div class="relative group reveal scale-105" style="animation-delay: 0.1s;">
-                    <div class="z-50 absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-coral-pink to-burgundy text-white px-4 py-1 rounded-full text-sm font-bold">
-                        MÁS POPULAR
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-br from-coral-pink/20 to-burgundy/20 rounded-3xl blur-xl"></div>
-                    <div class="relative bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-coral-pink/50 hover:border-coral-pink transition-all">
-                        <h3 class="text-2xl font-bold text-coral-pink mb-4 mt-4">TRANSFORM</h3>
-                        <div class="text-4xl font-black mb-2">$2,200</div>
-                        <p class="text-gray-400 mb-6">La experiencia completa de evolución</p>
-                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-coral-pink mr-3"></i>
-                                Todo lo de Discover +
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-coral-pink mr-3"></i>
-                                16 sesiones premium
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-coral-pink mr-3"></i>
-                                Nutrición personalizada
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-coral-pink mr-3"></i>
-                                20% desc. VitalHealth
-                            </li>
-                        </ul>
-                        <a href="https://wa.me/5233123456789?text=Hola!%20Me%20interesa%20el%20paquete%20TRANSFORM" 
-                           class="block text-center bg-gradient-to-r from-coral-pink to-burgundy text-white py-3 rounded-full font-bold hover:scale-105 transition-transform">
-                            EVOLUCIONAR
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Elite -->
-                <div class="relative group reveal" style="animation-delay: 0.2s;">
-                    <div class="absolute inset-0 bg-gradient-to-br from-sunset-gold/10 to-peach/10 rounded-3xl blur-xl"></div>
-                    <div class="relative bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-sunset-gold/30 hover:border-sunset-gold/60 transition-all hover:scale-105">
-                        <h3 class="text-2xl font-bold text-sunset-gold mb-4">ELITE</h3>
-                        <div class="text-4xl font-black mb-2">$3,500</div>
-                        <p class="text-gray-400 mb-6">Para las que no conocen límites</p>
-                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-sunset-gold mr-3"></i>
-                                Todo lo anterior + VIP
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-sunset-gold mr-3"></i>
-                                Sesiones 1:1 exclusivas
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-sunset-gold mr-3"></i>
-                                Plan nutricional VIP
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check text-sunset-gold mr-3"></i>
-                                Acceso prioritario 24/7
-                            </li>
-                        </ul>
-                        <a href="https://wa.me/5233123456789?text=Hola!%20Me%20interesa%20el%20paquete%20ELITE" 
-                           class="block text-center bg-gradient-to-r from-sunset-gold to-peach text-gray-900 py-3 rounded-full font-bold hover:scale-105 transition-transform">
-                            TRASCENDER
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- RETOX Preview Section -->
     <section id="retox" class="py-20 bg-gradient-to-b from-black via-gray-900/50 to-black relative overflow-hidden">
         <!-- Background effects -->
@@ -384,8 +495,8 @@
         <div class="container mx-auto px-4 relative z-10">
             <div class="text-center mb-16 reveal">
                 <div class="inline-flex items-center bg-phase-1/20 backdrop-blur rounded-full px-6 py-2 mb-6">
-                    <i class="fas fa-rocket text-phase-1 mr-3"></i>
-                    <span class="text-phase-1 font-bold">PROGRAMA EXCLUSIVO</span>
+                    <i class="fas fa-lock text-phase-1 mr-3"></i>
+                    <span class="text-phase-1 font-bold">PRÓXIMAMENTE</span>
                 </div>
                 <h2 class="text-5xl md:text-7xl font-black mb-6">
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-phase-1 via-phase-2 to-phase-4">
@@ -395,17 +506,19 @@
                     <span class="text-white">TU EVOLUCIÓN EN 4 FASES</span>
                 </h2>
                 <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                    84 días de transformación sistemática. Cada fase de 21 días 
-                    activa una evolución diferente en tu cuerpo.
+                    84 días de transformación sistemática que las fundadoras ayudarán a perfeccionar.
+                    <span class="text-phase-1 font-bold">Disponible después del lanzamiento oficial.</span>
                 </p>
             </div>
 
-            <!-- Phase Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <!-- Phase Cards Grid - Coming Soon -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 opacity-60">
                 <!-- RETOX -->
-                <a href="retox.html#retox" class="group reveal">
-                    <div class="relative bg-white/5 backdrop-blur rounded-3xl p-6 border border-phase-1/30 hover:border-phase-1 transition-all hover:scale-105 h-full">
-                        <div class="absolute top-3 right-3 w-2 h-2 bg-phase-1 rounded-full pulse-element"></div>
+                <div class="group reveal">
+                    <div class="relative bg-white/5 backdrop-blur rounded-3xl p-6 border border-gray-600/30 transition-all h-full">
+                        <div class="absolute inset-0 bg-black/60 rounded-3xl flex items-center justify-center">
+                            <i class="fas fa-lock text-3xl text-gray-500"></i>
+                        </div>
                         <div class="w-12 h-12 bg-gradient-to-r from-phase-1/20 to-phase-1/10 rounded-xl flex items-center justify-center mb-4">
                             <i class="fas fa-leaf text-phase-1 text-xl"></i>
                         </div>
@@ -413,11 +526,14 @@
                         <p class="text-phase-1 text-sm font-medium mb-2">Fase 1 • Desintoxica</p>
                         <p class="text-gray-400 text-sm">Limpieza celular profunda y renovación total</p>
                     </div>
-                </a>
+                </div>
 
                 <!-- REVIVE -->
-                <a href="retox.html#revive" class="group reveal" style="animation-delay: 0.1s;">
-                    <div class="relative bg-white/5 backdrop-blur rounded-3xl p-6 border border-phase-2/30 hover:border-phase-2 transition-all hover:scale-105 h-full opacity-80">
+                <div class="group reveal" style="animation-delay: 0.1s;">
+                    <div class="relative bg-white/5 backdrop-blur rounded-3xl p-6 border border-gray-600/30 transition-all h-full">
+                        <div class="absolute inset-0 bg-black/60 rounded-3xl flex items-center justify-center">
+                            <i class="fas fa-lock text-3xl text-gray-500"></i>
+                        </div>
                         <div class="w-12 h-12 bg-gradient-to-r from-phase-2/20 to-phase-2/10 rounded-xl flex items-center justify-center mb-4">
                             <i class="fas fa-heart text-phase-2 text-xl"></i>
                         </div>
@@ -425,11 +541,14 @@
                         <p class="text-phase-2 text-sm font-medium mb-2">Fase 2 • Restaura</p>
                         <p class="text-gray-400 text-sm">Regeneración y restauración profunda</p>
                     </div>
-                </a>
+                </div>
 
                 <!-- NUTRIX -->
-                <a href="retox.html#nutrix" class="group reveal" style="animation-delay: 0.2s;">
-                    <div class="relative bg-white/5 backdrop-blur rounded-3xl p-6 border border-phase-3/30 hover:border-phase-3 transition-all hover:scale-105 h-full opacity-80">
+                <div class="group reveal" style="animation-delay: 0.2s;">
+                    <div class="relative bg-white/5 backdrop-blur rounded-3xl p-6 border border-gray-600/30 transition-all h-full">
+                        <div class="absolute inset-0 bg-black/60 rounded-3xl flex items-center justify-center">
+                            <i class="fas fa-lock text-3xl text-gray-500"></i>
+                        </div>
                         <div class="w-12 h-12 bg-gradient-to-r from-phase-3/20 to-phase-3/10 rounded-xl flex items-center justify-center mb-4">
                             <i class="fas fa-seedling text-phase-3 text-xl"></i>
                         </div>
@@ -437,11 +556,14 @@
                         <p class="text-phase-3 text-sm font-medium mb-2">Fase 3 • Nutre</p>
                         <p class="text-gray-400 text-sm">Fortaleza desde las células</p>
                     </div>
-                </a>
+                </div>
 
                 <!-- AWAKEN -->
-                <a href="retox.html#awaken" class="group reveal" style="animation-delay: 0.3s;">
-                    <div class="relative bg-white/5 backdrop-blur rounded-3xl p-6 border border-phase-4/30 hover:border-phase-4 transition-all hover:scale-105 h-full opacity-80">
+                <div class="group reveal" style="animation-delay: 0.3s;">
+                    <div class="relative bg-white/5 backdrop-blur rounded-3xl p-6 border border-gray-600/30 transition-all h-full">
+                        <div class="absolute inset-0 bg-black/60 rounded-3xl flex items-center justify-center">
+                            <i class="fas fa-lock text-3xl text-gray-500"></i>
+                        </div>
                         <div class="w-12 h-12 bg-gradient-to-r from-phase-4/20 to-phase-4/10 rounded-xl flex items-center justify-center mb-4">
                             <i class="fas fa-bolt text-phase-4 text-xl"></i>
                         </div>
@@ -449,108 +571,240 @@
                         <p class="text-phase-4 text-sm font-medium mb-2">Fase 4 • Despierta</p>
                         <p class="text-gray-400 text-sm">Máximo potencial liberado</p>
                     </div>
-                </a>
+                </div>
             </div>
 
             <!-- CTA -->
             <div class="text-center reveal">
-                <a href="retox.html" 
-                   class="inline-flex items-center bg-gradient-to-r from-phase-1 to-phase-4 text-white px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform">
-                    <i class="fas fa-play mr-3"></i>
-                    Descubre RETOX Completo
-                </a>
+                <div class="bg-white/5 backdrop-blur rounded-2xl p-6 max-w-2xl mx-auto border border-gray-600">
+                    <h3 class="text-2xl font-bold mb-4">Las fundadoras tendrán acceso prioritario</h3>
+                    <p class="text-gray-400 mb-6">
+                        Cuando RETOX esté listo, las primeras 15 fundadoras serán las primeras en experimentarlo.
+                        <span class="text-phase-1 font-bold">Su feedback ayudará a perfeccionarlo.</span>
+                    </p>
+                    <a href="#fundadoras" 
+                       class="inline-flex items-center bg-gradient-to-r from-phase-1 to-phase-4 text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform">
+                        <i class="fas fa-crown mr-3"></i>
+                        Ser Fundadora para Acceso VIP
+                    </a>
+                </div>
                 <p class="text-gray-500 text-sm mt-4">
-                    <i class="fas fa-fire text-phase-1"></i> 
-                    Fase 1 disponible ahora • Cupos limitados
+                    <i class="fas fa-clock text-phase-1"></i> 
+                    RETOX se desarrollará con el feedback de las fundadoras
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- COMUNIDAD Section -->
-    <section id="comunidad" class="py-20 bg-gradient-to-b from-black to-gray-900">
+    <!-- TRANSFORMACIÓN (Packages) Section -->
+    <section id="transformacion" class="py-20 bg-black">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-5xl md:text-7xl font-black mb-6">
-                    COMUNIDAD
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-warm-orange to-coral-pink">
-                        VITAL
+                <h2 class="text-4xl md:text-7xl font-black mb-6">
+                    LANZAMIENTO
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-coral-pink to-sunset-gold">
+                        OFICIAL
                     </span>
                 </h2>
                 <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                    Más que un estudio, somos una tribu de mujeres que se transforman juntas
+                    Precios oficiales desde noviembre 12, 2024
                 </p>
             </div>
 
-            <!-- Community Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- VitalBeat Essential -->
+                <div class="relative group reveal">
+                    <div class="absolute inset-0 bg-gradient-to-br from-warm-orange/10 to-sunset-gold/10 rounded-3xl blur-xl"></div>
+                    <div class="relative bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-warm-orange/30 hover:border-warm-orange/60 transition-all hover:scale-105">
+                        <h3 class="text-2xl font-bold text-warm-orange mb-4">VITALBEAT ESSENTIAL</h3>
+                        <div class="text-4xl font-black mb-2">$1,199</div>
+                        <p class="text-gray-400 mb-6">Tu primer paso hacia la transformación real</p>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-warm-orange mr-3"></i>
+                                12 clases grupales premium
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-warm-orange mr-3"></i>
+                                Bioescáner inicial revelador
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-warm-orange mr-3"></i>
+                                Acceso VitalCircles
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-warm-orange mr-3"></i>
+                                Introducción VitalHealth
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/526221424577?text=Hola%20VitalBeat%20💪%0A%0AQuiero%20información%20sobre%20VitalBeat%20Essential%20por%20%241%2C199%0A%0A¿Cuándo%20inicia%20el%20lanzamiento%20oficial%3F" 
+                           class="block text-center bg-gradient-to-r from-warm-orange to-sunset-gold text-white py-3 rounded-full font-bold hover:scale-105 transition-transform">
+                            TRANSFORMAR
+                        </a>
+                        <p class="text-center text-xs text-gray-500 mt-2">Disponible desde nov 12</p>
+                    </div>
+                </div>
+
+                <!-- VitalBeat Complete (Featured) -->
+                <div class="relative group reveal scale-105" style="animation-delay: 0.1s;">
+                    <div class="z-50 absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-coral-pink to-burgundy text-white px-4 py-1 rounded-full text-sm font-bold">
+                        LANZAMIENTO OFICIAL
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-coral-pink/20 to-burgundy/20 rounded-3xl blur-xl"></div>
+                    <div class="relative bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-coral-pink/50 hover:border-coral-pink transition-all">
+                        <h3 class="text-2xl font-bold text-coral-pink mb-4 mt-4">VITALBEAT COMPLETE</h3>
+                        <div class="text-4xl font-black mb-2">$1,899</div>
+                        <p class="text-gray-400 mb-6">La experiencia integral de bienestar</p>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-coral-pink mr-3"></i>
+                                Todo VitalBeat Essential +
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-coral-pink mr-3"></i>
+                                Bioescáner mensual incluido
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-coral-pink mr-3"></i>
+                                Plan nutricional personalizado
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-coral-pink mr-3"></i>
+                                15% desc. VitalHealth
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/526221424577?text=Hola%20VitalBeat%20💪%0A%0AQuiero%20información%20sobre%20VitalBeat%20Complete%20por%20%241%2C899%0A%0A¿Cuándo%20inicia%20el%20lanzamiento%20oficial%3F" 
+                           class="block text-center bg-gradient-to-r from-coral-pink to-burgundy text-white py-3 rounded-full font-bold hover:scale-105 transition-transform">
+                            EVOLUCIONAR
+                        </a>
+                        <p class="text-center text-xs text-gray-500 mt-2">Disponible desde nov 12</p>
+                    </div>
+                </div>
+
+                <!-- VitalBeat Elite -->
+                <div class="relative group reveal opacity-60" style="animation-delay: 0.2s;">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-700/10 to-gray-600/10 rounded-3xl blur-xl"></div>
+                    <div class="relative bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-gray-600/50 transition-all">
+                        <div class="absolute inset-0 bg-black/60 rounded-3xl flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-lock text-4xl text-gray-500 mb-4"></i>
+                                <h4 class="text-xl font-bold text-gray-400 mb-2">PRÓXIMAMENTE</h4>
+                                <p class="text-sm text-gray-500">VitalBeat Elite</p>
+                                <p class="text-xs text-gray-600 mt-2">Experiencia VIP exclusiva</p>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-500 mb-4">VITALBEAT ELITE</h3>
+                        <div class="text-4xl font-black mb-2 text-gray-500">$2,799</div>
+                        <p class="text-gray-500 mb-6">Para las que no conocen límites</p>
+                        <ul class="space-y-3 text-sm text-gray-500 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-gray-500 mr-3"></i>
+                                Todo VitalBeat Complete +
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-gray-500 mr-3"></i>
+                                Sesiones 1:1 exclusivas
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-gray-500 mr-3"></i>
+                                Plan nutricional VIP
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-gray-500 mr-3"></i>
+                                Acceso prioritario 24/7
+                            </li>
+                        </ul>
+                        <div class="block text-center bg-gray-700 text-gray-400 py-3 rounded-full font-bold cursor-not-allowed">
+                            <i class="fas fa-lock mr-2"></i> EN DESARROLLO
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMUNIDAD VITAL - Buscamos Fundadoras Section -->
+    <section id="comunidad" class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <div class="inline-flex items-center bg-warm-orange/20 backdrop-blur rounded-full px-6 py-2 mb-6">
+                    <i class="fas fa-search text-warm-orange mr-3"></i>
+                    <span class="text-warm-orange font-bold">BUSCAMOS FUNDADORAS</span>
+                </div>
+                <h2 class="text-4xl md:text-6xl font-black mb-6">
+                    ESTAS MUJERES YA
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-warm-orange to-coral-pink">
+                        DECIDIERON
+                    </span>
+                    <br>
+                    <span class="text-white">¿TÚ QUÉ ESPERAS?</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Las fundadoras no solo obtendrán beneficios únicos...
+                    <span class="text-warm-orange font-bold">crearán juntas algo que nunca antes existió.</span>
+                </p>
+            </div>
+
+            <!-- Future Testimonials from Founders -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                <!-- Testimonial 1 -->
+                <!-- Future Testimonial 1 -->
                 <div class="bg-white/5 backdrop-blur rounded-3xl p-8 border border-warm-orange/20 reveal">
                     <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" 
-                             alt="Sofía" 
-                             class="w-16 h-16 rounded-full mr-4">
+                        <div class="w-16 h-16 rounded-full mr-4 bg-gradient-to-r from-warm-orange to-coral-pink flex items-center justify-center">
+                            <span class="text-lg font-bold">?</span>
+                        </div>
                         <div>
-                            <h4 class="font-bold">Sofía Martínez</h4>
-                            <div class="flex text-yellow-400 text-sm">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
+                            <h4 class="font-bold">Tu nombre aquí</h4>
+                            <p class="text-sm text-warm-orange">Fundadora Original</p>
                         </div>
                     </div>
                     <p class="text-gray-300 italic">
-                        "VitalBeat cambió mi frecuencia de vida. No solo transformé mi cuerpo, 
-                        encontré una familia de guerreras."
+                        "Fui parte de crear algo único en Guadalajara. No solo transformé mi cuerpo, 
+                        ayudé a definir qué significa VitalBeat."
                     </p>
+                    <div class="mt-4">
+                        <span class="text-warm-orange text-sm font-bold">Testimonio futuro • Primera fundadora</span>
+                    </div>
                 </div>
 
-                <!-- Testimonial 2 -->
+                <!-- Future Testimonial 2 -->
                 <div class="bg-white/5 backdrop-blur rounded-3xl p-8 border border-coral-pink/20 reveal" style="animation-delay: 0.1s;">
                     <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" 
-                             alt="Carmen" 
-                             class="w-16 h-16 rounded-full mr-4">
+                        <div class="w-16 h-16 rounded-full mr-4 bg-gradient-to-r from-coral-pink to-sunset-gold flex items-center justify-center">
+                            <span class="text-lg font-bold">?</span>
+                        </div>
                         <div>
-                            <h4 class="font-bold">Carmen López</h4>
-                            <div class="flex text-yellow-400 text-sm">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
+                            <h4 class="font-bold">Podría ser tu nombre</h4>
+                            <p class="text-sm text-coral-pink">Fundadora Original</p>
                         </div>
                     </div>
                     <p class="text-gray-300 italic">
-                        "RETOX me devolvió la energía que perdí hace años. 
-                        21 días que cambiaron todo."
+                        "Mi voz importó desde el día uno. Mis ideas ayudaron a crear los círculos de mujeres 
+                        más poderosos de México."
                     </p>
+                    <div class="mt-4">
+                        <span class="text-coral-pink text-sm font-bold">Testimonio futuro • Co-creadora</span>
+                    </div>
                 </div>
 
-                <!-- Testimonial 3 -->
+                <!-- Future Testimonial 3 -->
                 <div class="bg-white/5 backdrop-blur rounded-3xl p-8 border border-sunset-gold/20 reveal" style="animation-delay: 0.2s;">
                     <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" 
-                             alt="Ana" 
-                             class="w-16 h-16 rounded-full mr-4">
+                        <div class="w-16 h-16 rounded-full mr-4 bg-gradient-to-r from-sunset-gold to-peach flex items-center justify-center">
+                            <span class="text-lg font-bold">?</span>
+                        </div>
                         <div>
-                            <h4 class="font-bold">Ana Rodríguez</h4>
-                            <div class="flex text-yellow-400 text-sm">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
+                            <h4 class="font-bold">¿Serás tú?</h4>
+                            <p class="text-sm text-sunset-gold">Fundadora Original</p>
                         </div>
                     </div>
                     <p class="text-gray-300 italic">
-                        "La combinación de Pilates, Kickboxing y nutrición es perfecta. 
-                        Nunca me había sentido tan fuerte."
+                        "Cuando otras mujeres preguntan cómo llegué aquí, les digo: 'Creí en una visión 
+                        cuando solo éramos 15 guerreras.'"
                     </p>
+                    <div class="mt-4">
+                        <span class="text-sunset-gold text-sm font-bold">Testimonio futuro • Visionaria</span>
+                    </div>
                 </div>
             </div>
 
@@ -559,23 +813,37 @@
                 <div class="reveal">
                     <div class="text-4xl mb-4">🔥</div>
                     <h3 class="font-bold mb-2">RETOS ÉPICOS</h3>
-                    <p class="text-sm text-gray-400">Desafíos mensuales que te transforman</p>
+                    <p class="text-sm text-gray-400">Desafíos mensuales que las fundadoras ayudarán a diseñar</p>
                 </div>
                 <div class="reveal" style="animation-delay: 0.1s;">
                     <div class="text-4xl mb-4">👯‍♀️</div>
                     <h3 class="font-bold mb-2">TRIBU VITAL</h3>
-                    <p class="text-sm text-gray-400">Hermandad que se potencia</p>
+                    <p class="text-sm text-gray-400">Hermandad que las fundadoras crearán desde cero</p>
                 </div>
                 <div class="reveal" style="animation-delay: 0.2s;">
                     <div class="text-4xl mb-4">🧠</div>
                     <h3 class="font-bold mb-2">WORKSHOPS</h3>
-                    <p class="text-sm text-gray-400">Conocimiento que transforma</p>
+                    <p class="text-sm text-gray-400">Conocimiento que las fundadoras co-desarrollarán</p>
                 </div>
                 <div class="reveal" style="animation-delay: 0.3s;">
                     <div class="text-4xl mb-4">💫</div>
                     <h3 class="font-bold mb-2">EVENTOS VIP</h3>
-                    <p class="text-sm text-gray-400">Experiencias exclusivas</p>
+                    <p class="text-sm text-gray-400">Experiencias que las fundadoras inspirarán</p>
                 </div>
+            </div>
+
+            <!-- Final CTA for Founders -->
+            <div class="text-center mt-16 reveal">
+                <h3 class="text-3xl font-bold mb-6">Solo quedan 8 espacios de fundadora original</h3>
+                <a onclick="openFounderModal()" 
+                   class="inline-flex items-center bg-gradient-to-r from-warm-orange to-coral-pink text-white px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform cta-pulse cursor-pointer">
+                    <i class="fas fa-crown mr-3"></i> 
+                    QUIERO SER FUNDADORA ORIGINAL
+                </a>
+                <p class="text-gray-500 text-sm mt-4">
+                    <i class="fas fa-clock text-warm-orange"></i> 
+                    Después del 12 de septiembre: precio sube + solo 1 año bloqueado
+                </p>
             </div>
         </div>
     </section>
@@ -596,16 +864,16 @@
                 </span>
             </h2>
             
-            <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-                No esperes el lunes. No esperes enero. 
-                <span class="text-warm-orange font-bold">Tu transformación comienza con una decisión.</span>
+            <p class="text-xl text-gray-300 mb-12 max-w-4xl mx-auto">
+                En 20 años, cuando VitalBeat sea la referencia de transformación integral en México, 
+                <span class="text-warm-orange font-bold">podrás decir que fuiste una de las 15 que lo hizo posible.</span>
             </p>
 
             <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-                <a href="#transformacion" 
-                   class="bg-gradient-to-r from-warm-orange to-coral-pink text-white px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform inline-flex items-center cta-pulse">
-                    <i class="fas fa-sparkles mr-3"></i> 
-                    COMENZAR MI EVOLUCIÓN
+                <a onclick="openFounderModal()" 
+                   class="bg-gradient-to-r from-warm-orange to-coral-pink text-white px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform inline-flex items-center cta-pulse cursor-pointer">
+                    <i class="fas fa-crown mr-3"></i> 
+                    SER FUNDADORA ORIGINAL
                 </a>
                 
                 <a href="retox.html" 
@@ -617,7 +885,7 @@
 
             <div class="mt-12 inline-flex items-center bg-white/10 backdrop-blur rounded-full px-6 py-3">
                 <i class="fas fa-map-marker-alt text-warm-orange mr-3"></i>
-                <span class="font-medium">La Calma & Paseos del Sol • Guadalajara</span>
+                <span class="font-medium">2666 Yolanda Cárdenas, La Calma • Guadalajara</span>
             </div>
         </div>
     </section>
@@ -638,10 +906,10 @@
                 <div>
                     <h4 class="font-bold mb-4">Experiencias</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#" class="hover:text-warm-orange transition-colors">Pilates Consciente</a></li>
-                        <li><a href="#" class="hover:text-coral-pink transition-colors">Kickboxing Explosivo</a></li>
-                        <li><a href="#" class="hover:text-sunset-gold transition-colors">Escáner Bioeléctrico</a></li>
-                        <li><a href="#" class="hover:text-peach transition-colors">Nutrición Celular</a></li>
+                        <li><a href="#experiencia" class="hover:text-warm-orange transition-colors">Pilates Consciente</a></li>
+                        <li><a href="#experiencia" class="hover:text-coral-pink transition-colors">Kickboxing Explosivo</a></li>
+                        <li><a href="#experiencia" class="hover:text-sunset-gold transition-colors">Escáner Bioeléctrico</a></li>
+                        <li><a href="#experiencia" class="hover:text-peach transition-colors">Nutrición Celular</a></li>
                     </ul>
                 </div>
                 
@@ -649,9 +917,9 @@
                     <h4 class="font-bold mb-4">Programas</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
                         <li><a href="retox.html" class="hover:text-phase-1 transition-colors">RETOX - 4 Fases</a></li>
-                        <li><a href="#transformacion" class="hover:text-warm-orange transition-colors">Paquetes Discover</a></li>
-                        <li><a href="#transformacion" class="hover:text-coral-pink transition-colors">Paquetes Transform</a></li>
-                        <li><a href="#transformacion" class="hover:text-sunset-gold transition-colors">Paquetes Elite</a></li>
+                        <li><a href="#fundadoras" class="hover:text-warm-orange transition-colors">Fundadoras VitalBeat</a></li>
+                        <li><a href="#transformacion" class="hover:text-coral-pink transition-colors">Paquetes Oficiales</a></li>
+                        <li><a href="#comunidad" class="hover:text-sunset-gold transition-colors">Comunidad Vital</a></li>
                     </ul>
                 </div>
                 
@@ -670,27 +938,84 @@
                     </div>
                     <p class="text-sm text-gray-400">
                         <i class="fab fa-whatsapp text-green-500 mr-2"></i>
-                        +52 33 1234 5678
+                        +52 622 142 4577
                     </p>
                 </div>
             </div>
             
             <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-                <p>&copy; 2025 VitalBeat. Una revolución en bienestar integral.</p>
+                <p>&copy; 2025 VitalBeat. Una revolución en bienestar integral co-creada por mujeres extraordinarias.</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/5233123456789?text=Hola!%20Quiero%20transformar%20mi%20energía%20con%20VitalBeat" 
-       target="_blank"
-       class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl hover:scale-110 transition-transform shadow-lg z-40 group">
+    <a onclick="openFounderModal()" 
+       class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl hover:scale-110 transition-transform shadow-lg z-40 group cursor-pointer">
         <i class="fab fa-whatsapp"></i>
-        <span class="absolute -top-12 right-0 bg-black/90 text-white px-3 py-2 rounded-lg text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-            ¡Hablemos! 💪
+        <span class="absolute -top-16 right-0 bg-black/90 text-white px-3 py-2 rounded-lg text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+            ¿Fundadora Original? 👑<br>
+            ¡Solo quedan 8 espacios!
         </span>
     </a>
 
+    <!-- Modal de Captura de Datos -->
+    <div id="founderModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-gray-900/95 backdrop-blur-xl rounded-3xl p-8 max-w-md w-full border border-warm-orange/30 relative">
+            <button onclick="closeFounderModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-warm-orange to-coral-pink rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-crown text-2xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">¡Último paso!</h3>
+                <p class="text-gray-400 text-sm">Para contactarte de manera personalizada</p>
+            </div>
+
+            <form id="founderForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">Nombre completo *</label>
+                    <input type="text" id="fullName" required 
+                           class="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-warm-orange focus:outline-none"
+                           placeholder="Ej: Ana García Martínez">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">Correo electrónico *</label>
+                    <input type="email" id="email" required 
+                           class="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-warm-orange focus:outline-none"
+                           placeholder="tu.email@ejemplo.com">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">Fecha de nacimiento *</label>
+                    <input type="date" id="birthDate" required 
+                           class="w-full px-4 py-3 bg-white/5 border border-gray-600 rounded-xl text-white focus:border-warm-orange focus:outline-none">
+                </div>
+
+                <div class="bg-warm-orange/10 border border-warm-orange/30 rounded-xl p-4 mt-6">
+                    <p class="text-xs text-gray-300">
+                        <i class="fas fa-shield-alt text-warm-orange mr-2"></i>
+                        Tu información es 100% privada y solo se usa para contactarte sobre VitalBeat.
+                    </p>
+                </div>
+
+                <button type="submit" 
+                        class="w-full bg-gradient-to-r from-warm-orange to-coral-pink text-white py-3 rounded-xl font-bold hover:scale-105 transition-transform">
+                    <i class="fab fa-whatsapp mr-2"></i> Continuar a WhatsApp
+                </button>
+            </form>
+
+            <p class="text-center text-xs text-gray-500 mt-4">
+                Al continuar aceptas recibir información sobre VitalBeat
+            </p>
+        </div>
+    </div>
+
+    <!-- JavaScript for Modal -->
+    <script src="js/modal.js"></script>
     <!-- JavaScript -->
     <script src="js/main.js"></script>
 </body>
