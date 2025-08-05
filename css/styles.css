@@ -78,7 +78,7 @@
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, #ff7849, #ff6b9d, #ffa726, #a855f7);
+  background: linear-gradient(90deg, #FFBF99, #E96FFF, #4533F0, #a855f7);
   width: 0%;
   z-index: 101;
   transition: width 0.3s ease;
@@ -133,7 +133,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #ff7849, #ff6b9d);
+  background: linear-gradient(to bottom, #FFBF99, #E96FFF);
   border-radius: 3px;
 }
 
