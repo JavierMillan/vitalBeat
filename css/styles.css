@@ -2,6 +2,12 @@
   font-family: "Space Grotesk", sans-serif;
 }
 
+.logo-text {
+  font-family: "Futura", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 /* Animations */
 @keyframes float {
   0%,
