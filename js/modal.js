@@ -299,13 +299,13 @@ function handleStep2Submit(e) {
 function generateFounderMessage(data) {
     const periodoTexto = data.periodo === 'mañana' ? 'mañanas' : 'tardes';
     const horarioTexto = formatHorario(data.horario);
-    const edad = calculateAge(data.birthDate);
+    const fechaNacimiento = formatBirthDate(data.birthDate);
     
     return `¡Hola VitalBeat! Quiero ser FUNDADORA ORIGINAL
 
 DATOS PERSONALES:
 • Nombre: ${data.fullName}
-• Edad: ${edad} años
+• Fecha de nacimiento: ${fechaNacimiento}
 • Email: ${data.email}
 
 HORARIO PREFERIDO:
@@ -329,17 +329,19 @@ function formatHorario(horario) {
     return formats[horario] || horario;
 }
 
-function calculateAge(birthDate) {
-    const today = new Date();
-    const birth = new Date(birthDate);
-    let age = today.getFullYear() - birth.getFullYear();
-    const monthDiff = today.getMonth() - birth.getMonth();
+function formatBirthDate(birthDate) {
+    // Convertir 2024-03-15 a "15 de marzo, 1990"
+    const date = new Date(birthDate);
+    const months = [
+        'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+        'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
+    ];
     
-    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
-        age--;
-    }
+    const day = date.getDate();
+    const month = months[date.getMonth()];
+    const year = date.getFullYear();
     
-    return age;
+    return `${day} de ${month}, ${year}`;
 }
 
 // Cerrar modal con Escape
