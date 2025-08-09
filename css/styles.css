@@ -158,4 +158,13 @@ html {
   .grid-cols-3{
     grid-template-columns: repeat(1, minmax(0,1fr));
   }
+  
+  .hero-logo-container{
+    margin-top: 2.5em;
+  }
+
+  .sproof-container{
+    margin-bottom: 1em;
+  }
+
 }
