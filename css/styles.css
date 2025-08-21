@@ -84,7 +84,7 @@
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, #FFBF99, #E96FFF, #4533F0, #a855f7);
+  background: linear-gradient(90deg, #ffbf99, #e96fff, #4533f0, #a855f7);
   width: 0%;
   z-index: 101;
   transition: width 0.3s ease;
@@ -139,7 +139,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #FFBF99, #E96FFF);
+  background: linear-gradient(to bottom, #ffbf99, #e96fff);
   border-radius: 3px;
 }
 
@@ -155,16 +155,83 @@ html {
   .hidden-sm {
     display: none;
   }
-  .grid-cols-3{
-    grid-template-columns: repeat(1, minmax(0,1fr));
+  .grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
-  
-  .hero-logo-container{
+
+  .hero-logo-container {
     margin-top: 2.5em;
   }
 
-  .sproof-container{
+  .sproof-container {
     margin-bottom: 1em;
   }
+}
 
+* {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.logo-text {
+  font-family: "Futura", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Animaciones simplificadas */
+@keyframes subtleGlow {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes ctaPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.subtle-glow {
+  animation: subtleGlow 4s ease-in-out infinite;
+}
+
+.cta-pulse {
+  animation: ctaPulse 2s ease-in-out infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar minimalista */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ffbf99, #e96fff);
+  border-radius: 2px;
 }
