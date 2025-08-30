@@ -1,4 +1,3 @@
-
 // Variables
 const PHONE_NUMBER = '526221424577';
 
@@ -9,17 +8,17 @@ function openWhatsApp() {
 Quiero ser FUNDADORA ORIGINAL de VitalBeat.
 
 Me interesa:
-• El precio especial de $999/mes (períodos según mes de entrada)
+• Asistir a la CLASE DEMO este martes 2 de septiembre
+• Conocer el precio especial de $999/mes (períodos según mes de entrada)
 • Ser co-creadora de la experiencia VitalBeat
 • Formar parte de las primeras 16 mujeres
-• Pre-lanzamiento: 25 de Agosto 2025 (3 meses total)
 
-ESTRUCTURA DE PRECIOS:
+ESTRUCTURA DE PRECIOS FUNDADORAS:
 • Mes 1: $999 x 1 año
 • Mes 2-3: $999 x 6 meses  
-• Después: $1,200/mes (solo clases, sin beneficios)
+• Después: $1,200/mes (solo clases, sin beneficios de fundadora)
 
-¿Podemos agendar una cita para asegurar mi lugar como fundadora?
+¿Podemos confirmar mi asistencia a la clase demo del martes 2 de septiembre para asegurar mi lugar como fundadora?
 
 ¡Estoy lista para transformar mi energía! 💪`;
 
