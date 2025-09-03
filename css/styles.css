@@ -90,6 +90,11 @@
   transition: width 0.3s ease;
 }
 
+.blur-background {
+  backdrop-filter: blur(24px) saturate(120%);
+  -webkit-backdrop-filter: (24px) saturate(120%);
+}
+
 /* Reveal animations */
 .reveal {
   opacity: 0;

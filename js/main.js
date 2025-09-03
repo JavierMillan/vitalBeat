@@ -1,86 +1,114 @@
-// Variables
+// Variables globales
 const PHONE_NUMBER = '526221424577';
+const PRELAUNCH_START = new Date('2025-09-08T00:00:00').getTime();
+const PRELAUNCH_END = new Date('2026-01-08T23:59:59').getTime();
 
-// Función principal de WhatsApp (sin modal)
-function openWhatsApp() {
-    const mensaje = `¡Hola VitalBeat! 👑
+// Función principal WhatsApp
+function openFounderWhatsApp() {
+    const mensaje = `✨ Hola VitalBeat!
 
-Quiero ser FUNDADORA ORIGINAL de VitalBeat.
+Siento una conexión profunda con el mensaje "¿Recuerdas quién eras antes?" porque realmente he perdido mi esencia cuidando de todos menos de mí misma.
 
-Me interesa:
-• Asistir a la CLASE DEMO este martes 2 de septiembre
-• Conocer el precio especial de $999/mes (períodos según mes de entrada)
-• Ser co-creadora de la experiencia VitalBeat
-• Formar parte de las primeras 16 mujeres
+🌸 MIS DATOS:
+• Nombre: [Tu nombre]
+• Edad: [Tu edad]
+• Teléfono: [Tu teléfono]
+• ¿Qué experiencia tienes con ejercicio/bienestar? [Tu respuesta]
+• ¿En qué momento perdiste tu esencia? [Tu respuesta]
+• ¿Cómo te imaginas después de la transformación? [Tu respuesta]
 
-ESTRUCTURA DE PRECIOS FUNDADORAS:
-• Mes 1: $999 x 1 año
-• Mes 2-3: $999 x 6 meses  
-• Después: $1,200/mes (solo clases, sin beneficios de fundadora)
+💫 ENTIENDO LA INVERSIÓN FUNDADORA:
+• Mes 1-2 (Sep-Oct): $999/mes x 1 año
+• Mes 3 (Nov-Dic): $999/mes x 6 meses
+• Mes 4 (Enero): $999/mes x 3 meses (beneficios completos)
+• Después (Feb 2026): $1,200/mes
 
-¿Podemos confirmar mi asistencia a la clase demo del martes 2 de septiembre para asegurar mi lugar como fundadora?
+🎁 LO QUE MÁS ME RESUENA:
+✅ Bioescáner mensual incluido ($349 valor)
+✅ Badge Fundadora Original
+✅ Momentos VIP y sorpresas exclusivas
+✅ Detalles personalizados únicos
+✅ 12 clases/mes Ejercicio Funcional + Barre
+✅ Círculo de Mujeres y acompañamiento integral
+✅ Ser co-creadora de algo transformador
 
-¡Estoy lista para transformar mi energía! 💪`;
+¿Podemos tener una conversación auténtica para explorar si este es mi momento de regresar a mí misma?
+
+Siento que VitalBeat es exactamente lo que mi alma ha estado buscando. 💕
+
+¡Gracias por crear este espacio para nosotras! 🦋`;
 
     const whatsappURL = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(mensaje)}`;
     window.open(whatsappURL, '_blank');
 }
 
-// Scroll suave al contacto
-function scrollToContact() {
-    document.getElementById('contacto').scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-    });
+// Countdown timer
+function updateCountdown() {
+    const now = new Date().getTime();
+
+    // Si no ha empezado el prelanzamiento
+    if (now < PRELAUNCH_START) {
+        const distance = PRELAUNCH_START - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        const countdownText = `${days}d ${hours}h ${minutes}m`;
+        document.getElementById('countdown').textContent = countdownText;
+        document.getElementById('final-countdown').textContent = countdownText;
+    }
+    // Si está en prelanzamiento
+    else if (now >= PRELAUNCH_START && now < PRELAUNCH_END) {
+        const distance = PRELAUNCH_END - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        const countdownText = `${days}d ${hours}h ${minutes}m`;
+        document.getElementById('countdown').textContent = countdownText;
+        document.getElementById('final-countdown').textContent = countdownText;
+    }
+    // Si ya terminó
+    else {
+        document.getElementById('countdown').textContent = 'PRELANZAMIENTO TERMINADO';
+        document.getElementById('final-countdown').textContent = 'PRELANZAMIENTO TERMINADO';
+    }
 }
 
-// Mobile menu
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-const closeMobileMenu = document.getElementById('closeMobileMenu');
+// Update countdown every minute
+setInterval(updateCountdown, 60000);
+updateCountdown();
 
-mobileMenuBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('translate-x-full');
-});
+// Mobile menu y animaciones
+document.addEventListener('DOMContentLoaded', function () {
+    // Reveal animations
+    const revealElements = document.querySelectorAll('.reveal');
 
-closeMobileMenu.addEventListener('click', () => {
-    mobileMenu.classList.add('translate-x-full');
-});
+    const revealOnScroll = () => {
+        revealElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight - 100;
 
-// Cerrar menú al hacer clic en enlace
-mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.add('translate-x-full');
-    });
-});
+            if (isVisible) {
+                element.classList.add('active');
+            }
+        });
+    };
 
-// Animaciones de reveal
-const revealElements = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Check on load
 
-const revealOnScroll = () => {
-    revealElements.forEach(element => {
-        const rect = element.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight - 50;
-
-        if (isVisible) {
-            element.classList.add('active');
-        }
-    });
-};
-
-window.addEventListener('scroll', revealOnScroll);
-revealOnScroll(); // Check on load
-
-// Smooth scroll para navegación
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
 });
