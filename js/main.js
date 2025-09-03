@@ -19,9 +19,9 @@ Siento una conexión profunda con el mensaje "¿Recuerdas quién eras antes?" po
 
 💫 ENTIENDO LA INVERSIÓN FUNDADORA:
 • Mes 1-2 (Sep-Oct): $999/mes x 1 año
-• Mes 3 (Nov-Dic): $999/mes x 6 meses
-• Mes 4 (Enero): $999/mes x 3 meses (beneficios completos)
-• Después (Feb 2026): $1,200/mes
+• Mes 3 (Nov): $999/mes x 6 meses
+• Mes 4 (Dic): $999/mes x 3 meses (beneficios completos)
+• Después (Enero 2026): $1,200/mes
 
 🎁 LO QUE MÁS ME RESUENA:
 ✅ Bioescáner mensual incluido ($349 valor)
@@ -32,10 +32,8 @@ Siento una conexión profunda con el mensaje "¿Recuerdas quién eras antes?" po
 ✅ Círculo de Mujeres y acompañamiento integral
 ✅ Ser co-creadora de algo transformador
 
-¿Podemos tener una conversación auténtica para explorar si este es mi momento de regresar a mí misma?
 
 Siento que VitalBeat es exactamente lo que mi alma ha estado buscando. 💕
-
 ¡Gracias por crear este espacio para nosotras! 🦋`;
 
     const whatsappURL = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(mensaje)}`;
