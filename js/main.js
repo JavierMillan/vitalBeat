@@ -52,8 +52,11 @@ function updateCountdown() {
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
         const countdownText = `${days}d ${hours}h ${minutes}m`;
-        document.getElementById('countdown').textContent = countdownText;
-        document.getElementById('final-countdown').textContent = countdownText;
+        const countdownElement = document.getElementById('countdown');
+        const finalCountdownElement = document.getElementById('final-countdown');
+        
+        if (countdownElement) countdownElement.textContent = countdownText;
+        if (finalCountdownElement) finalCountdownElement.textContent = countdownText;
     }
     // Si está en prelanzamiento
     else if (now >= PRELAUNCH_START && now < PRELAUNCH_END) {
@@ -63,13 +66,19 @@ function updateCountdown() {
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
         const countdownText = `${days}d ${hours}h ${minutes}m`;
-        document.getElementById('countdown').textContent = countdownText;
-        document.getElementById('final-countdown').textContent = countdownText;
+        const countdownElement = document.getElementById('countdown');
+        const finalCountdownElement = document.getElementById('final-countdown');
+        
+        if (countdownElement) countdownElement.textContent = countdownText;
+        if (finalCountdownElement) finalCountdownElement.textContent = countdownText;
     }
     // Si ya terminó
     else {
-        document.getElementById('countdown').textContent = 'PRELANZAMIENTO TERMINADO';
-        document.getElementById('final-countdown').textContent = 'PRELANZAMIENTO TERMINADO';
+        const countdownElement = document.getElementById('countdown');
+        const finalCountdownElement = document.getElementById('final-countdown');
+        
+        if (countdownElement) countdownElement.textContent = 'PRELANZAMIENTO TERMINADO';
+        if (finalCountdownElement) finalCountdownElement.textContent = 'PRELANZAMIENTO TERMINADO';
     }
 }
 
@@ -79,24 +88,31 @@ updateCountdown();
 
 // Mobile menu y animaciones
 document.addEventListener('DOMContentLoaded', function () {
-    // Reveal animations
+    // Reveal animations usando Intersection Observer (más eficiente)
     const revealElements = document.querySelectorAll('.reveal');
-
-    const revealOnScroll = () => {
-        revealElements.forEach(element => {
-            const rect = element.getBoundingClientRect();
-            const isVisible = rect.top < window.innerHeight - 100;
-
-            if (isVisible) {
-                element.classList.add('active');
-            }
+    
+    if (revealElements.length > 0) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Una vez revelado, podemos dejar de observarlo para mejor performance
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null, // viewport del navegador
+            rootMargin: '0px 0px -100px 0px', // Trigger 100px antes de que sea visible
+            threshold: 0.1 // Se activa cuando 10% del elemento es visible
         });
-    };
 
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Check on load
+        // Observar todos los elementos reveal
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+    }
 
-    // Smooth scroll
+    // Smooth scroll para enlaces internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -109,4 +125,98 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    // Mobile menu functionality (si existe)
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMobileMenu = document.getElementById('closeMobileMenu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+    }
+
+    if (closeMobileMenu && mobileMenu) {
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+    }
+
+    // Progress bar (si existe)
+    const progressBar = document.getElementById('progressBar');
+    if (progressBar) {
+        const updateProgressBar = () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + '%';
+        };
+
+        window.addEventListener('scroll', updateProgressBar);
+        updateProgressBar(); // Check on load
+    }
+
+    // Lazy loading para imágenes (performance extra)
+    const images = document.querySelectorAll('img[data-src]');
+    if (images.length > 0) {
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        images.forEach(img => imageObserver.observe(img));
+    }
+
+    // Animaciones de entrada staggered para elementos en grid
+    const gridElements = document.querySelectorAll('.grid .reveal');
+    if (gridElements.length > 0) {
+        gridElements.forEach((element, index) => {
+            element.style.animationDelay = `${index * 0.1}s`;
+        });
+    }
+
+    // Parallax sutil para elementos decorativos
+    const parallaxElements = document.querySelectorAll('.pulse-element');
+    let ticking = false;
+
+    function updateParallax() {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+
+        parallaxElements.forEach((element, index) => {
+            const speed = 0.2 + (index * 0.1);
+            element.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+
+        ticking = false;
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    }
+
+    if (parallaxElements.length > 0) {
+        window.addEventListener('scroll', requestTick);
+    }
+
+    // Error handling para elementos que podrían no existir
+    console.log('VitalBeat JS inicializado correctamente ✨');
+    console.log(`Elementos .reveal encontrados: ${revealElements.length}`);
 });
