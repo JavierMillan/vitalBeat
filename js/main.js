@@ -22,7 +22,6 @@ Me interesa mucho vivir la experiencia con la CLASE DEMO por $150.
 
 🌸 MIS DATOS:
 • Nombre completo: ${formData.nombre}
-• Edad: ${formData.edad} años
 • Teléfono: ${formData.telefono}
 • Experiencia con ejercicio: ${formData.experiencia}
 
