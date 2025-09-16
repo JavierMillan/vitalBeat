@@ -1,96 +1,90 @@
+
 // Variables globales
 const PHONE_NUMBER = '526221424577';
-const PRELAUNCH_START = new Date('2025-09-08T00:00:00').getTime();
-const PRELAUNCH_END = new Date('2026-01-08T23:59:59').getTime();
 
-// Función principal WhatsApp
-function openFounderWhatsApp() {
-    const mensaje = `✨ Hola VitalBeat!
+// Función para clase demo (ahora abre modal)
+function openDemoClass() {
+    document.getElementById('demoModal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
 
-Siento una conexión profunda con el mensaje "¿Recuerdas quién eras antes?" porque realmente he perdido mi esencia cuidando de todos menos de mí misma.
+// Función para cerrar modal
+function closeDemoModal() {
+    document.getElementById('demoModal').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+}
+
+// Función para generar mensaje dinámico
+function generateDemoMessage(formData) {
+    return `💕 ¡Hola VitalBeat!
+
+Me interesa mucho vivir la experiencia con la CLASE DEMO por $150.
 
 🌸 MIS DATOS:
-• Nombre: [Tu nombre]
-• Edad: [Tu edad]
-• Teléfono: [Tu teléfono]
-• ¿Qué experiencia tienes con ejercicio/bienestar? [Tu respuesta]
-• ¿En qué momento perdiste tu esencia? [Tu respuesta]
-• ¿Cómo te imaginas después de la transformación? [Tu respuesta]
+• Nombre completo: ${formData.nombre}
+• Edad: ${formData.edad} años
+• Teléfono: ${formData.telefono}
+• Experiencia con ejercicio: ${formData.experiencia}
 
-💫 ENTIENDO LA INVERSIÓN FUNDADORA:
-• Mes 1-2 (Sep-Oct): $999/mes x 1 año
-• Mes 3 (Nov): $999/mes x 6 meses
-• Mes 4 (Dic): $999/mes x 3 meses (beneficios completos)
-• Después (Enero 2026): $1,200/mes
+⏰ HORARIO ELEGIDO:
+✅ ${formData.horario}
 
-🎁 LO QUE MÁS ME RESUENA:
-✅ Bioescáner mensual incluido ($349 valor)
-✅ Badge Fundadora Original
-✅ Momentos VIP y sorpresas exclusivas
-✅ Detalles personalizados únicos
-✅ 12 clases/mes Ejercicio Funcional + Barre
-✅ Círculo de Mujeres y acompañamiento integral
-✅ Ser co-creadora de algo transformador
+💝 ENTIENDO QUE:
+✅ La clase demo cuesta $150 pesos
+✅ Dura aproximadamente 50 minutos
+✅ Incluye ejercicio funcional + Barre
+✅ Máximo 8 mujeres por sesión
+✅ Es mi oportunidad de vivir la magia VitalBeat
 
-
-Siento que VitalBeat es exactamente lo que mi alma ha estado buscando. 💕
-¡Gracias por crear este espacio para nosotras! 🦋`;
-
-    const whatsappURL = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(mensaje)}`;
-    window.open(whatsappURL, '_blank');
+¡Estoy emocionada de reconectarme conmigo misma! 🦋✨`;
 }
 
-// Countdown timer
-function updateCountdown() {
-    const now = new Date().getTime();
-
-    // Si no ha empezado el prelanzamiento
-    if (now < PRELAUNCH_START) {
-        const distance = PRELAUNCH_START - now;
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-        const countdownText = `${days}d ${hours}h ${minutes}m`;
-        const countdownElement = document.getElementById('countdown');
-        const finalCountdownElement = document.getElementById('final-countdown');
-        
-        if (countdownElement) countdownElement.textContent = countdownText;
-        if (finalCountdownElement) finalCountdownElement.textContent = countdownText;
-    }
-    // Si está en prelanzamiento
-    else if (now >= PRELAUNCH_START && now < PRELAUNCH_END) {
-        const distance = PRELAUNCH_END - now;
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-        const countdownText = `${days}d ${hours}h ${minutes}m`;
-        const countdownElement = document.getElementById('countdown');
-        const finalCountdownElement = document.getElementById('final-countdown');
-        
-        if (countdownElement) countdownElement.textContent = countdownText;
-        if (finalCountdownElement) finalCountdownElement.textContent = countdownText;
-    }
-    // Si ya terminó
-    else {
-        const countdownElement = document.getElementById('countdown');
-        const finalCountdownElement = document.getElementById('final-countdown');
-        
-        if (countdownElement) countdownElement.textContent = 'PRELANZAMIENTO TERMINADO';
-        if (finalCountdownElement) finalCountdownElement.textContent = 'PRELANZAMIENTO TERMINADO';
-    }
-}
-
-// Update countdown every minute
-setInterval(updateCountdown, 60000);
-updateCountdown();
-
-// Mobile menu y animaciones
+// Manejar envío del formulario
 document.addEventListener('DOMContentLoaded', function () {
+    const demoForm = document.getElementById('demoForm');
+
+    demoForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Obtener datos del formulario
+        const formData = {
+            nombre: document.getElementById('nombre').value,
+            edad: document.getElementById('edad').value,
+            telefono: document.getElementById('telefono').value,
+            experiencia: document.getElementById('experiencia').value,
+            horario: document.querySelector('input[name="horario"]:checked')?.value
+        };
+
+        // Validar que se haya seleccionado un horario
+        if (!formData.horario) {
+            alert('Por favor selecciona un horario para tu clase demo');
+            return;
+        }
+
+        // Generar mensaje
+        const mensaje = generateDemoMessage(formData);
+
+        // Abrir WhatsApp
+        const whatsappURL = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(mensaje)}`;
+        window.open(whatsappURL, '_blank');
+
+        // Cerrar modal
+        closeDemoModal();
+
+        // Limpiar formulario
+        demoForm.reset();
+    });
+
+    // Cerrar modal al hacer clic fuera
+    document.getElementById('demoModal').addEventListener('click', function (e) {
+        if (e.target === this) {
+            closeDemoModal();
+        }
+    });
+
     // Reveal animations usando Intersection Observer (más eficiente)
     const revealElements = document.querySelectorAll('.reveal');
-    
+
     if (revealElements.length > 0) {
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -126,76 +120,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Mobile menu functionality (si existe)
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const closeMobileMenu = document.getElementById('closeMobileMenu');
-
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-        });
-    }
-
-    if (closeMobileMenu && mobileMenu) {
-        closeMobileMenu.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-        });
-
-        // Close mobile menu on link click
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
-        });
-    }
-
-    // Progress bar (si existe)
-    const progressBar = document.getElementById('progressBar');
-    if (progressBar) {
-        const updateProgressBar = () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            progressBar.style.width = scrolled + '%';
-        };
-
-        window.addEventListener('scroll', updateProgressBar);
-        updateProgressBar(); // Check on load
-    }
-
-    // Lazy loading para imágenes (performance extra)
-    const images = document.querySelectorAll('img[data-src]');
-    if (images.length > 0) {
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-
-        images.forEach(img => imageObserver.observe(img));
-    }
-
-    // Animaciones de entrada staggered para elementos en grid
-    const gridElements = document.querySelectorAll('.grid .reveal');
-    if (gridElements.length > 0) {
-        gridElements.forEach((element, index) => {
-            element.style.animationDelay = `${index * 0.1}s`;
-        });
-    }
-
     // Parallax sutil para elementos decorativos
     const parallaxElements = document.querySelectorAll('.pulse-element');
     let ticking = false;
 
     function updateParallax() {
         const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.5;
 
         parallaxElements.forEach((element, index) => {
             const speed = 0.2 + (index * 0.1);
@@ -215,6 +145,35 @@ document.addEventListener('DOMContentLoaded', function () {
     if (parallaxElements.length > 0) {
         window.addEventListener('scroll', requestTick);
     }
+
+    // Accordion logic for mobile-first collapsible cards in LA EXPERIENCIA VITALBEAT
+    const toggles = document.querySelectorAll('.accordion-toggle');
+    const contents = document.querySelectorAll('.accordion-content');
+    function closeAll() {
+        contents.forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.accordion-arrow i').forEach(i => i.classList.remove('fa-chevron-up'));
+        document.querySelectorAll('.accordion-arrow i').forEach(i => i.classList.add('fa-chevron-down'));
+    }
+    function openAccordion(idx) {
+        contents[idx].classList.remove('hidden');
+        document.querySelectorAll('.accordion-arrow')[idx]?.querySelector('i').classList.remove('fa-chevron-down');
+        document.querySelectorAll('.accordion-arrow')[idx]?.querySelector('i').classList.add('fa-chevron-up');
+    }
+    // Always start collapsed, always show arrows
+    closeAll();
+    document.querySelectorAll('.accordion-arrow').forEach(a => a.style.display = 'inline-flex');
+    toggles.forEach((toggle, idx) => {
+        toggle.addEventListener('click', function (e) {
+            if (contents[idx].classList.contains('hidden')) {
+                closeAll();
+                openAccordion(idx);
+            } else {
+                contents[idx].classList.add('hidden');
+                document.querySelectorAll('.accordion-arrow')[idx]?.querySelector('i').classList.remove('fa-chevron-up');
+                document.querySelectorAll('.accordion-arrow')[idx]?.querySelector('i').classList.add('fa-chevron-down');
+            }
+        });
+    });
 
     // Error handling para elementos que podrían no existir
     console.log('VitalBeat JS inicializado correctamente ✨');

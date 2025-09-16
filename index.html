@@ -28,8 +28,101 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" href="assets/img/favicon.svg" type="image/x-icon">
+    <style>
+        * {
+            font-family: "Space Grotesk", sans-serif;
+        }
+
+        .logo-text {
+            font-family: "Futura", sans-serif;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Animaciones simplificadas */
+        @keyframes subtleGlow {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.02);
+            }
+        }
+
+        @keyframes ctaPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03);
+            }
+        }
+
+        .subtle-glow {
+            animation: subtleGlow 4s ease-in-out infinite;
+        }
+
+        .cta-pulse {
+            animation: ctaPulse 2s ease-in-out infinite;
+        }
+
+        .pulse-element {
+            animation: subtleGlow 3s ease-in-out infinite;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .blur-background {
+            backdrop-filter: blur(24px) saturate(120%);
+            -webkit-backdrop-filter: blur(24px) saturate(120%);
+        }
+
+        /* Scrollbar minimalista */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #FFBF99, #E96FFF);
+            border-radius: 2px;
+        }
+
+        @media (max-width: 649px) {
+            html {
+                overflow-x: hidden !important;
+            }
+            .hidden-sm {
+                display: none;
+            }
+            .grid-cols-3 {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+            .hero-logo-container {
+                margin-top: 2.5em;
+            }
+            .sproof-container {
+                margin-bottom: 1em;
+            }
+        }
+    </style>
 </head>
 
 <body class="bg-black text-white overflow-x-hidden">
@@ -39,16 +132,16 @@
         <nav class="container mx-auto px-4 py-3">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <img src="assets/img/logo.svg" alt="Logo VitalBeat" class="h-6 mr-2">
+                    <img src="assets/img/logo.svg" alt="Logo VitalBeat" class="h-6 mr-2 rounded">
                     <span class="logo-text text-lg text-transparent bg-clip-text bg-gradient-to-r from-vital-skin to-vital-pink">
                         VitalBeat
                     </span>
                 </div>
 
                 <!-- CTA Header -->
-                <a href="javascript:void(0)" onclick="openFounderWhatsApp()" 
+                <a href="javascript:void(0)" onclick="openDemoClass()" 
                     class="bg-gradient-to-r from-vital-skin to-vital-pink text-white px-6 py-2 rounded-full font-semibold hover:scale-105 transition-transform text-sm">
-                    REGRESAR A MÍ
+                    CLASE DEMO $150
                 </a>
             </div>
         </nav>
@@ -69,11 +162,6 @@
 
         <!-- Content -->
         <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
-            <!-- Logo -->
-            <div class="mt-20 mb-6">
-                <img src="assets/img/logo.svg" class="h-20 mx-auto" alt="VitalBeat">
-            </div>
-
             <!-- Headline Transformador -->
             <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
                 ¿RECUERDAS QUIÉN<br>
@@ -97,7 +185,7 @@
                 <p class="text-gray-300 mb-3">
                     <i class="fas fa-calendar text-vital-purple mr-2"></i>Un viaje de transformación de <strong>4 meses</strong> para redescubrir tu esencia
                 </p>
-                <div class="flex items-center justify-center space-x-4 text-sm">
+                <div class="flex items-center justify-center space-x-4 text-sm sproof-container">
                     <span class="bg-vital-skin/20 px-3 py-1 rounded-full"><i class="fas fa-users text-vital-skin mr-1"></i>5 Hermanas ya despiertas</span>
                     <span class="bg-vital-pink/20 px-3 py-1 rounded-full"><i class="fas fa-sparkles text-vital-pink mr-1"></i>¿Serás la próxima?</span>
                 </div>
@@ -105,20 +193,20 @@
 
             <!-- CTA Principal -->
             <div class="mb-12">
-                <a href="javascript:void(0)" onclick="openFounderWhatsApp()" 
+                <a href="javascript:void(0)" onclick="openDemoClass()" 
                     class="bg-gradient-to-r from-vital-skin to-vital-pink text-white px-16 py-6 rounded-full font-bold text-2xl hover:scale-105 transition-transform cta-pulse inline-flex items-center shadow-2xl">
-                    <i class="fas fa-home mr-4"></i>
-                    REGRESAR A MÍ MISMA
+                    <i class="fas fa-heart mr-4"></i>
+                    CLASE DEMO $150
                 </a>
                 <p class="text-gray-500 text-sm mt-4 max-w-2xl mx-auto">
-                    <i class="fas fa-whatsapp text-green-400 mr-2"></i>Una conversación que puede cambiarlo todo
+                    <i class="fas fa-calendar text-vital-skin mr-2"></i>Lun • Mie • Vie: 7am, 8am, 9am
                     <span class="mx-2">•</span>
-                    <i class="fas fa-heart text-vital-skin mr-2"></i>Tu esencia te está esperando
+                    <i class="fas fa-heart text-vital-pink mr-2"></i>Vive la experiencia VitalBeat
                 </p>
             </div>
 
             <!-- Social Proof -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-400 max-w-3xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm text-gray-400 max-w-3xl mx-auto">
                 <div class="flex items-center justify-center">
                     <i class="fas fa-heart text-vital-skin mr-2"></i>
                     <span>16 espacios únicos</span>
@@ -126,10 +214,6 @@
                 <div class="flex items-center justify-center">
                     <i class="fas fa-home text-vital-pink mr-2"></i>
                     <span>Regreso a tu esencia</span>
-                </div>
-                <div class="flex items-center justify-center">
-                    <i class="fas fa-calendar-alt text-vital-purple mr-2"></i>
-                    <span>4 meses de transformación</span>
                 </div>
                 <div class="flex items-center justify-center">
                     <i class="fas fa-users text-phase-1 mr-2"></i>
@@ -271,112 +355,243 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                <!-- Ejercicio Funcional -->
-                <div class="bg-white/5 backdrop-blur rounded-3xl p-6 border border-vital-skin/20 hover:border-vital-skin/40 transition-all reveal text-center">
-                    <div class="w-16 h-16 bg-gradient-to-r from-vital-skin to-vital-skin rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-dumbbell text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">EJERCICIO FUNCIONAL + BARRE</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Movimientos que tu cuerpo necesita. Máximo 8 mujeres por sesión.
-                    </p>
-                    <div class="h-32 rounded-xl overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=200&fit=crop"
-                            alt="Ejercicio Funcional" class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <!-- Círculo de Mujeres -->
-                <div class="bg-white/5 backdrop-blur rounded-3xl p-6 border border-vital-pink/20 hover:border-vital-pink/40 transition-all reveal text-center" style="animation-delay: 0.1s;">
-                    <div class="w-16 h-16 bg-gradient-to-r from-vital-pink to-vital-pink rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-heart text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">CÍRCULO DE MUJERES</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Comunidad de apoyo y crecimiento. Reconexión auténtica entre hermanas.
-                    </p>
-                    <div class="h-32 rounded-xl overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=200&fit=crop"
-                            alt="Círculo de Mujeres" class="w-full h-full object-cover">
+            <div class="space-y-4 experience-cards max-w-2xl mx-auto">
+                <!-- Mobile-first collapsible accordion, always single column, only one open at a time -->
+                <div class="accordion-card bg-white/5 backdrop-blur rounded-3xl border border-vital-skin/30 reveal active">
+                    <button class="w-full flex items-center justify-between p-6 focus:outline-none accordion-toggle" data-accordion="0">
+                        <span class="flex items-center">
+                            <span class="w-14 h-14 bg-gradient-to-r from-vital-skin to-vital-skin rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-dumbbell text-2xl text-white"></i>
+                            </span>
+                            <span class="text-lg md:text-2xl font-bold text-vital-skin">EJERCICIO FUNCIONAL + BARRE</span>
+                        </span>
+                        <span class="accordion-arrow" style="display: inline-flex;"><i class="fas fa-chevron-up"></i></span>
+                    </button>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-300 mb-4">Movimientos que tu cuerpo necesita, diseñados para despertar tu fuerza interior. Máximo 8 mujeres por sesión para atención personalizada.</p>
+                        <ul class="space-y-2 text-sm text-gray-300 text-left mx-auto">
+                            <li class="flex items-center"><i class="fas fa-check text-vital-skin mr-2"></i>Grupos reducidos</li>
+                            <li class="flex items-center"><i class="fas fa-check text-vital-skin mr-2"></i>Atención personalizada</li>
+                            <li class="flex items-center"><i class="fas fa-check text-vital-skin mr-2"></i>Rutinas adaptadas</li>
+                        </ul>
                     </div>
                 </div>
-
-                <!-- Bioescáner -->
-                <div class="bg-white/5 backdrop-blur rounded-3xl p-6 border border-vital-purple/20 hover:border-vital-purple/40 transition-all reveal text-center" style="animation-delay: 0.2s;">
-                    <div class="w-16 h-16 bg-gradient-to-r from-vital-purple to-vital-purple rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-bolt text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">BIOESCÁNER CUÁNTICO</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Análisis completo sin dolor. Incluido para fundadoras cada mes.
-                    </p>
-                    <div class="h-32 rounded-xl overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=200&fit=crop"
-                            alt="Bioescáner" class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <!-- Nutrición Celular -->
-                <div class="bg-white/5 backdrop-blur rounded-3xl p-6 border border-phase-1/20 hover:border-phase-1/40 transition-all reveal text-center" style="animation-delay: 0.3s;">
-                    <div class="w-16 h-16 bg-gradient-to-r from-phase-1 to-phase-1 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-atom text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">NUTRICIÓN CELULAR</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        VitalHealth con nanotecnología. 15% descuento para fundadoras.
-                    </p>
-                    <div class="h-32 rounded-xl overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=200&fit=crop"
-                            alt="Nutrición Celular" class="w-full h-full object-cover">
+                <div class="accordion-card bg-white/5 backdrop-blur rounded-3xl border border-vital-pink/30 reveal">
+                    <button class="w-full flex items-center justify-between p-6 focus:outline-none accordion-toggle" data-accordion="1">
+                        <span class="flex items-center">
+                            <span class="w-14 h-14 bg-gradient-to-r from-vital-pink to-vital-pink rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-heart text-2xl text-white"></i>
+                            </span>
+                            <span class="text-lg md:text-2xl font-bold text-vital-pink">CÍRCULO DE MUJERES</span>
+                        </span>
+                        <span class="accordion-arrow" style="display: inline-flex;"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <p class="text-gray-300 mb-4">Comunidad de apoyo y reconexión. Un espacio seguro para compartir y crecer juntas.</p>
+                        <ul class="space-y-2 text-sm text-gray-300 text-left mx-auto">
+                            <li class="flex items-center"><i class="fas fa-check text-vital-pink mr-2"></i>Apoyo emocional</li>
+                            <li class="flex items-center"><i class="fas fa-check text-vital-pink mr-2"></i>Red de hermanas</li>
+                            <li class="flex items-center"><i class="fas fa-check text-vital-pink mr-2"></i>Espacio seguro</li>
+                        </ul>
                     </div>
                 </div>
-
-                <!-- Acompañamiento Integral -->
-                <div class="bg-white/5 backdrop-blur rounded-3xl p-6 border border-phase-3/20 hover:border-phase-3/40 transition-all reveal text-center" style="animation-delay: 0.4s;">
-                    <div class="w-16 h-16 bg-gradient-to-r from-phase-3 to-phase-3 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-hands-helping text-2xl text-white"></i>
+                <div class="accordion-card bg-white/5 backdrop-blur rounded-3xl border border-vital-purple/30 reveal">
+                    <button class="w-full flex items-center justify-between p-6 focus:outline-none accordion-toggle" data-accordion="2">
+                        <span class="flex items-center">
+                            <span class="w-14 h-14 bg-gradient-to-r from-vital-purple to-vital-purple rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-bolt text-2xl text-white"></i>
+                            </span>
+                            <span class="text-lg md:text-2xl font-bold text-vital-purple">BIOESCÁNER CUÁNTICO</span>
+                        </span>
+                        <span class="accordion-arrow" style="display: inline-flex;"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <p class="text-gray-300 mb-4">Análisis cuántico mensual incluido en tu membresía para monitorear tu bienestar integral.</p>
+                        <ul class="space-y-2 text-sm text-gray-300 text-left mx-auto">
+                            <li class="flex items-center"><i class="fas fa-check text-vital-purple mr-2"></i>Monitoreo mensual</li>
+                            <li class="flex items-center"><i class="fas fa-check text-vital-purple mr-2"></i>Incluido en membresía</li>
+                            <li class="flex items-center"><i class="fas fa-check text-vital-purple mr-2"></i>Bienestar integral</li>
+                        </ul>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">ACOMPAÑAMIENTO INTEGRAL</h3>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Apoyo psicológico, nutricional y físico básico grupal. Especializado individual opcional.
-                    </p>
-                    <div class="h-32 rounded-xl overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=200&fit=crop"
-                            alt="Acompañamiento" class="w-full h-full object-cover">
+                </div>
+                <div class="accordion-card bg-white/5 backdrop-blur rounded-3xl border border-phase-1/30 reveal">
+                    <button class="w-full flex items-center justify-between p-6 focus:outline-none accordion-toggle" data-accordion="3">
+                        <span class="flex items-center">
+                            <span class="w-14 h-14 bg-gradient-to-r from-phase-1 to-phase-1 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-atom text-2xl text-white"></i>
+                            </span>
+                            <span class="text-lg md:text-2xl font-bold text-phase-1">NUTRICIÓN CELULAR</span>
+                        </span>
+                        <span class="accordion-arrow" style="display: inline-flex;"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <p class="text-gray-300 mb-4">Acceso a suplementos premium con descuento y asesoría grupal para tu salud celular.</p>
+                        <ul class="space-y-2 text-sm text-gray-300 text-left mx-auto">
+                            <li class="flex items-center"><i class="fas fa-check text-phase-1 mr-2"></i>Descuento en suplementos</li>
+                            <li class="flex items-center"><i class="fas fa-check text-phase-1 mr-2"></i>Asesoría grupal</li>
+                            <li class="flex items-center"><i class="fas fa-check text-phase-1 mr-2"></i>Salud integral</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-card bg-white/5 backdrop-blur rounded-3xl border border-phase-3/30 reveal">
+                    <button class="w-full flex items-center justify-between p-6 focus:outline-none accordion-toggle" data-accordion="4">
+                        <span class="flex items-center">
+                            <span class="w-14 h-14 bg-gradient-to-r from-phase-3 to-phase-3 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-hands-helping text-2xl text-white"></i>
+                            </span>
+                            <span class="text-lg md:text-2xl font-bold text-phase-3">ACOMPAÑAMIENTO INTEGRAL</span>
+                        </span>
+                        <span class="accordion-arrow" style="display: inline-flex;"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <p class="text-gray-300 mb-4">Apoyo psicológico, nutricional y físico grupal para tu transformación completa.</p>
+                        <ul class="space-y-2 text-sm text-gray-300 text-left mx-auto">
+                            <li class="flex items-center"><i class="fas fa-check text-phase-3 mr-2"></i>Apoyo psicológico</li>
+                            <li class="flex items-center"><i class="fas fa-check text-phase-3 mr-2"></i>Nutricional y físico</li>
+                            <li class="flex items-center"><i class="fas fa-check text-phase-3 mr-2"></i>Transformación completa</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TESTIMONIAL 
-    <section class="py-20 bg-gradient-to-br from-vital-purple/10 via-black to-vital-pink/10">
-        <div class="container mx-auto px-4 text-center">
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-white/5 backdrop-blur rounded-3xl p-12 border border-white/10">
-                    <div class="mb-8">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop" 
-                             alt="Fundadora" 
-                             class="w-20 h-20 rounded-full mx-auto border-4 border-vital-skin mb-4">
+    <!-- TESTIMONIO FUNDADORAS Section - 3 CARDS -->
+    <section class="py-12 bg-gradient-to-b from-gray-900 to-black">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- Card 1 -->
+                <div class="bg-gradient-to-br from-vital-skin/10 to-vital-pink/10 backdrop-blur rounded-3xl p-6 border border-vital-skin/30 reveal">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full border-2 border-vital-skin/50 flex items-center justify-center bg-gradient-to-br from-vital-skin/20 to-vital-pink/20 mr-4 flex-shrink-0">
+                            <img src="assets/img/fundadora 1.png" alt="Fundadora Alma" class="w-14 h-14 rounded-full object-cover">
+                        </div>
+                        <div>
+                            <div class="text-vital-skin font-bold text-lg">Alma</div>
+                            <div class="text-gray-400 text-sm">Fundadora</div>
+                            <div class="flex text-yellow-400 text-xs mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
                     </div>
-                    <blockquote class="text-2xl md:text-3xl font-bold mb-6 text-gray-100 leading-relaxed">
-                        "Por años me perdí cuidando a todos. VitalBeat no es solo ejercicio, 
-                        es regresar a quien soy realmente. Aquí encontré mi esencia de nuevo."
+                    <blockquote class="text-xl font-bold mb-3 text-gray-100">
+                        "Cada día soy más fuerte"
                     </blockquote>
-                    <div class="text-vital-skin font-bold text-lg">María - Cofundadora VitalBeat</div>
-                    <div class="flex justify-center items-center mt-4 text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-gradient-to-br from-vital-pink/10 to-vital-purple/10 backdrop-blur rounded-3xl p-6 border border-vital-pink/30 reveal">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full border-2 border-vital-pink/50 flex items-center justify-center bg-gradient-to-br from-vital-pink/20 to-vital-purple/20 mr-4 flex-shrink-0">
+                            
+                        </div>
+                        <div>
+                            <div class="text-vital-pink font-bold text-lg">Tu nombre aqui</div>
+                            <div class="text-gray-400 text-sm">Reconecta contigo</div>
+                            <div class="flex text-yellow-400 text-xs mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
                     </div>
+                    <blockquote class="text-xl font-bold mb-3 text-gray-100">
+                        "Tu comunidad te espera"
+                    </blockquote>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-gradient-to-br from-vital-purple/10 to-vital-skin/10 backdrop-blur rounded-3xl p-6 border border-vital-purple/30 reveal">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 rounded-full border-2 border-vital-purple/50 flex items-center justify-center bg-gradient-to-br from-vital-purple/20 to-vital-skin/20 mr-4 flex-shrink-0">
+                            
+                        </div>
+                        <div>
+                            <div class="text-vital-purple font-bold text-lg">Esta puede ser tu</div>
+                            <div class="text-gray-400 text-sm">Una Guerrera VitalBeat</div>
+                            <div class="flex text-yellow-400 text-xs mt-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote class="text-xl font-bold mb-3 text-gray-100">
+                        "Estoy reconectando conmigo misma"
+                    </blockquote>
                 </div>
             </div>
         </div>
     </section>
--->
+
+    <!-- ÚNETE A LA COMUNIDAD Section -->
+    <section class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-6xl font-black mb-6">
+                    ÚNETE A LAS
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-vital-skin to-vital-pink">
+                        GUERRERAS VITALBEAT
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Mientras decides si VitalBeat es para ti, conecta con mujeres que ya están en su proceso de transformación
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-green-500/20 to-vital-pink/20 backdrop-blur rounded-3xl p-8 border border-green-500/30 text-center">
+                    <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fab fa-whatsapp text-3xl text-white"></i>
+                    </div>
+                    
+                    <h3 class="text-3xl font-bold mb-4">GRUPO GUERRERAS VITALBEAT</h3>
+                    <p class="text-gray-300 mb-6 text-lg leading-relaxed">
+                        Un espacio donde compartimos tips de bienestar, nos motivamos mutuamente 
+                        y creamos comunidad antes de encontrarnos en el estudio. 
+                        <span class="text-vital-pink font-bold">Aquí ya no caminas sola.</span>
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <div class="bg-white/10 rounded-xl p-4">
+                            <i class="fas fa-heart text-vital-skin text-2xl mb-2"></i>
+                            <h4 class="font-bold">Motivación Diaria</h4>
+                            <p class="text-sm text-gray-400">Tips y frases inspiradoras</p>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4">
+                            <i class="fas fa-users text-vital-pink text-2xl mb-2"></i>
+                            <h4 class="font-bold">Red de Apoyo</h4>
+                            <p class="text-sm text-gray-400">Mujeres que te entienden</p>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-4">
+                            <i class="fas fa-bell text-vital-purple text-2xl mb-2"></i>
+                            <h4 class="font-bold">Primeras en Saber</h4>
+                            <p class="text-sm text-gray-400">Noticias y eventos exclusivos</p>
+                        </div>
+                    </div>
+
+                    <a href="https://chat.whatsapp.com/BTV8nolY1LO8hM3sbyOWJR" 
+                       target="_blank"
+                       class="bg-green-500 text-white px-12 py-4 rounded-full font-bold text-xl hover:scale-105 transition-transform inline-flex items-center shadow-xl">
+                        <i class="fab fa-whatsapp mr-3 text-2xl"></i>
+                        UNIRME AL GRUPO
+                    </a>
+                    
+                    <p class="text-gray-500 text-sm mt-4">
+                        100% gratuito • Sin compromiso • Solo mujeres 💕
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- FAQ -->
     <section class="py-20 bg-black">
@@ -395,12 +610,12 @@
                 <div class="bg-white/5 backdrop-blur rounded-2xl p-6 border border-white/10">
                     <h3 class="text-xl font-bold mb-3 text-vital-skin">
                         <i class="fas fa-question-circle mr-3"></i>
-                        ¿Qué significa ser "Fundadora"?
+                        ¿Qué incluye la clase demo de $150?
                     </h3>
                     <p class="text-gray-300 leading-relaxed">
-                        Eres co-creadora de VitalBeat. Tu opinión cuenta para diseñar la experiencia perfecta. 
-                        Recibes beneficios únicos de por vida: precio especial, bioescáner incluido, 
-                        descuentos permanentes y reconocimiento especial como fundadora.
+                        Una experiencia completa de 50 minutos: ejercicio funcional + Barre, conoces a las instructoras, 
+                        sientes la energía del lugar y vives la magia VitalBeat. Es tu oportunidad perfecta para 
+                        decidir si este es tu espacio de transformación.
                     </p>
                 </div>
 
@@ -408,13 +623,12 @@
                 <div class="bg-white/5 backdrop-blur rounded-2xl p-6 border border-white/10">
                     <h3 class="text-xl font-bold mb-3 text-vital-pink">
                         <i class="fas fa-question-circle mr-3"></i>
-                        ¿Cómo funciona la inversión por meses?
+                        ¿Qué horarios tienen disponibles?
                     </h3>
                     <p class="text-gray-300 leading-relaxed">
-                        <strong>Mes 1-2:</strong> $999/mes x 1 año • 
-                        <strong>Mes 3:</strong> $999/mes x 6 meses • 
-                        <strong>Mes 4:</strong> $999/mes x 3 meses (todos los beneficios se mantienen) • 
-                        <strong>Después:</strong> $1,200/mes sin beneficios especiales.
+                        <strong>Lunes, Miércoles y Viernes:</strong> 7:00 AM, 8:00 AM y 9:00 AM. 
+                        Máximo 8 mujeres por sesión para garantizar atención personalizada. 
+                        Puedes elegir el horario que mejor se adapte a tu rutina.
                     </p>
                 </div>
 
@@ -422,11 +636,12 @@
                 <div class="bg-white/5 backdrop-blur rounded-2xl p-6 border border-white/10">
                     <h3 class="text-xl font-bold mb-3 text-vital-purple">
                         <i class="fas fa-question-circle mr-3"></i>
-                        ¿Qué incluye el Bioescáner?
+                        ¿Qué significa ser "Fundadora"?
                     </h3>
                     <p class="text-gray-300 leading-relaxed">
-                        Análisis cuántico completo mensual: composición corporal, estado metabólico, 
-                        deficiencias nutricionales y más. Valor regular $349/mes, incluido para fundadoras.
+                        Eres co-creadora de VitalBeat. Tu opinión cuenta para diseñar la experiencia perfecta. 
+                        Recibes beneficios únicos de por vida: precio especial, bioescáner incluido, 
+                        descuentos permanentes y reconocimiento especial como fundadora.
                     </p>
                 </div>
 
@@ -437,6 +652,7 @@
                         ¿Cuándo inicia VitalBeat?
                     </h3>
                     <p class="text-gray-300 leading-relaxed">
+                        <strong>Clases demo:</strong> Disponibles ahora para que vivas la experiencia • 
                         <strong>Prelanzamiento:</strong> 8 septiembre 2025 (4 meses de co-creación) • 
                         <strong>Apertura oficial:</strong> Enero 2026. Como fundadora, tienes acceso prioritario y ayudas a definir la experiencia.
                     </p>
@@ -454,15 +670,6 @@
         </div>
 
         <div class="container mx-auto px-4 text-center relative z-10">
-            <!-- Countdown final -->
-            <div class="inline-flex items-center bg-vital-skin/30 backdrop-blur rounded-full px-8 py-4 mb-8 border border-vital-skin/50">
-                <i class="fas fa-heart text-vital-skin mr-4 text-2xl"></i>
-                <div>
-                    <div class="text-vital-skin font-bold text-lg">TU ESENCIA TE ESPERA</div>
-                    <div id="final-countdown" class="text-white font-black text-xl">96d 13h 33m</div>
-                </div>
-            </div>
-
             <h2 class="text-5xl md:text-7xl font-black mb-8">
                 TU MOMENTO
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-vital-skin via-vital-pink to-vital-purple">
@@ -506,16 +713,16 @@
 
             <!-- CTA FINAL -->
             <div class="mb-8">
-                <a href="javascript:void(0)" onclick="openFounderWhatsApp()" 
+                <a href="javascript:void(0)" onclick="openDemoClass()" 
                     class="bg-gradient-to-r from-vital-skin to-vital-pink text-white px-20 py-8 rounded-full font-bold text-3xl hover:scale-105 transition-transform inline-flex items-center shadow-2xl cta-pulse">
-                    <i class="fas fa-home mr-4"></i>
-                    REGRESAR A MÍ MISMA
+                    <i class="fas fa-heart mr-4"></i>
+                    CLASE DEMO $150
                 </a>
             </div>
 
             <div class="text-gray-400 text-lg mb-8">
-                <i class="fab fa-whatsapp text-green-400 mr-2"></i>
-                Una conversación auténtica • Tu esencia te está esperando
+                <i class="fas fa-calendar text-vital-skin mr-2"></i>
+                Lun • Mie • Vie: 7am, 8am, 9am • Vive la experiencia VitalBeat
             </div>
 
             <!-- Valores -->
@@ -526,7 +733,7 @@
                 </div>
                 <div class="flex items-center justify-center p-4 bg-white/5 rounded-xl">
                     <i class="fas fa-home text-vital-pink mr-3"></i>
-                    <span>Regreso a tu esencia</span>
+                    <span>Regresa a tu esencia</span>
                 </div>
                 <div class="flex items-center justify-center p-4 bg-white/5 rounded-xl">
                     <i class="fas fa-users text-vital-purple mr-3"></i>
@@ -540,7 +747,6 @@
     <footer class="bg-gray-900 border-t border-gray-800 py-12">
         <div class="container mx-auto px-4 text-center">
             <div class="mb-6">
-                <img src="assets/img/logo.svg" alt="VitalBeat" class="h-8 mx-auto mb-4">
                 <span class="logo-text text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-vital-skin to-vital-pink">
                     VitalBeat
                 </span>
@@ -555,7 +761,7 @@
                 <a href="#" class="text-gray-400 hover:text-white transition-colors">
                     <i class="fab fa-tiktok text-2xl"></i>
                 </a>
-                <a href="javascript:void(0)" onclick="openFounderWhatsApp()" class="text-green-500 hover:text-green-400 transition-colors">
+                <a href="https://chat.whatsapp.com/BTV8nolY1LO8hM3sbyOWJR" target="_blank" class="text-green-500 hover:text-green-400 transition-colors">
                     <i class="fab fa-whatsapp text-2xl"></i>
                 </a>
             </div>
@@ -570,14 +776,134 @@
         </div>
     </footer>
 
+    <!-- Modal Formulario Demo -->
+    <div id="demoModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] hidden flex items-center justify-center p-4">
+        <div class="bg-gradient-to-br from-gray-900 to-black border border-vital-skin/30 rounded-3xl p-8 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <div class="text-center mb-6">
+                <h3 class="text-3xl font-bold mb-2">CLASE DEMO $150</h3>
+                <p class="text-gray-400">Completa tus datos y elige tu horario preferido</p>
+            </div>
+
+            <form id="demoForm" class="space-y-6">
+                <!-- Datos Personales -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-vital-skin">Nombre Completo *</label>
+                        <input type="text" id="nombre" required 
+                               class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:border-vital-skin focus:outline-none"
+                               placeholder="Tu nombre completo">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-vital-pink">Edad *</label>
+                        <input type="number" id="edad" required min="18" max="80"
+                               class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:border-vital-pink focus:outline-none"
+                               placeholder="Tu edad">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-vital-purple">Teléfono *</label>
+                    <input type="tel" id="telefono" required 
+                           class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:border-vital-purple focus:outline-none"
+                           placeholder="33 1234 5678">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-phase-1">Experiencia con Ejercicio *</label>
+                    <select id="experiencia" required 
+                            class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white focus:border-phase-1 focus:outline-none">
+                        <option value="">Selecciona tu nivel</option>
+                        <option value="Ninguna">Ninguna experiencia</option>
+                        <option value="Poca">Poca experiencia</option>
+                        <option value="Intermedia">Experiencia intermedia</option>
+                        <option value="Avanzada">Experiencia avanzada</option>
+                    </select>
+                </div>
+
+                <!-- Horarios -->
+                <div>
+                    <label class="block text-sm font-bold mb-4 text-vital-skin">Elige tu horario preferido *</label>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <!-- Lunes -->
+                        <div class="bg-white/5 rounded-xl p-4">
+                            <h4 class="font-bold mb-3 text-center">LUNES</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="horario" value="Lunes 7:00 AM" class="mr-3 text-vital-skin">
+                                    <span>7:00 AM</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="horario" value="Lunes 8:00 AM" class="mr-3 text-vital-skin">
+                                    <span>8:00 AM</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="horario" value="Lunes 9:00 AM" class="mr-3 text-vital-skin">
+                                    <span>9:00 AM</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Miércoles -->
+                        <div class="bg-white/5 rounded-xl p-4">
+                            <h4 class="font-bold mb-3 text-center">MIÉRCOLES</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="horario" value="Miércoles 7:00 AM" class="mr-3 text-vital-pink">
+                                    <span>7:00 AM</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="horario" value="Miércoles 8:00 AM" class="mr-3 text-vital-pink">
+                                    <span>8:00 AM</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="horario" value="Miércoles 9:00 AM" class="mr-3 text-vital-pink">
+                                    <span>9:00 AM</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Viernes -->
+                        <div class="bg-white/5 rounded-xl p-4">
+                            <h4 class="font-bold mb-3 text-center">VIERNES</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="horario" value="Viernes 7:00 AM" class="mr-3 text-vital-purple">
+                                    <span>7:00 AM</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="horario" value="Viernes 8:00 AM" class="mr-3 text-vital-purple">
+                                    <span>8:00 AM</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="horario" value="Viernes 9:00 AM" class="mr-3 text-vital-purple">
+                                    <span>9:00 AM</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones -->
+                <div class="flex gap-4 pt-6">
+                    <button type="button" onclick="closeDemoModal()" 
+                            class="flex-1 bg-gray-600 text-white py-3 rounded-full font-bold hover:bg-gray-500 transition-colors">
+                        Cancelar
+                    </button>
+                    <button type="submit" 
+                            class="flex-1 bg-gradient-to-r from-vital-skin to-vital-pink text-white py-3 rounded-full font-bold hover:scale-105 transition-transform">
+                        Agendar Demo 💕
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- WhatsApp Flotante -->
     <div class="fixed bottom-6 right-6 z-50">
-        <div class="relative">            
-            <a href="javascript:void(0)" onclick="openFounderWhatsApp()"
-                class="bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl hover:scale-110 transition-transform shadow-lg group">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-        </div>
+        <a href="javascript:void(0)" onclick="openDemoClass()"
+            class="bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl hover:scale-110 transition-transform shadow-lg group">
+            <i class="fas fa-heart"></i>
+        </a>
     </div>
 
     <!-- JavaScript -->
