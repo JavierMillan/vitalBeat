@@ -72,7 +72,7 @@
     body {
       background-color: #05030a;
       background-image: 
-        url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIyNTAiIGN5PSIyNTAiIHI9IjMiIGZpbGw9IiNmZGQyZmYiIG9wYWNpdHk9IjAuNSIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjQwMCIgcj0iMiIgZmlsbD0iI2ZjZjZmZiIgb3BhY2l0eT0iMC41Ii8+PGNpcmNsZSBjeD0iNDAwIiBjeT0iMTAwIiByPSI0IiBmaWxsPSIjZjhmZmZmIiBvcGFjaXR5PSIxIi8+PGNpcmNsZSBjeD0iNzUiIGN5PSI1MCIgcj0iMyIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC42Ii8+PGNpcmNsZSBjeD0iMzUwIiBjeT0iNDUwIiByPSIyIiIgZmlsbD0iI2Y5ZmZmZiIgb3BhY2l0eT0iMC40Ii8+PGNpcmNsZSBjeD0iMTc1IiBjeT0iMjAwIiByPSIyIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjUiLz48Y2lyY2xlIGN4PSIzMjUiIGN5PSIyNzUiIHI9IjMiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNyIvPjwvc3ZnPg=='),
+        url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMuY29tL3N2ZyI+PGNpcmNsZSBjeD0iMjUwIiBjeT0iMjUwIiByPSIzIiBmaWxsPSIjZmRkMmZmIiBvcGFjaXR5PSIwLjUiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI0MDAiIHI9IjIiIGZpbGw9IiNmY2Y2ZmYiIG9wYWNpdHk9IjAuNSIvPjxjaXJjbGUgY3g9IjQwMCIgY3k9IjEwMCIgcj0iNCIgZmlsbD0iI2Y4ZmZmZiIgb3BhY2l0eT0iMSIvPjxjaXJjbGUgY3g9Ijc1IiBjeT0iNTAiIHI9IjMiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNiIvPjxjaXJjbGUgY3g9IjM1MCIgY3k9IjQ1MCIgcj0iMiIgZmlsbD0iI2Y5ZmZmZiIgb3BhY2l0eT0iMC40Ii8+PGNpcmNsZSBjeD0iMTc1IiBjeT0iMjAwIiByPSIyIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjUiLz48Y2lyY2xlIGN4PSIzMjUiIGN5PSIyNzUiIHI9IjMiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuNyIvPjwvc3ZnPg=='),
         radial-gradient(circle at 15% 50%, rgba(192, 139, 255, 0.08), transparent 25%),
         radial-gradient(circle at 85% 30%, rgba(255, 122, 155, 0.08), transparent 25%);
       background-size: 500px 500px, cover, cover; /* Tamaño para los copos, luego para los gradientes */
@@ -210,7 +210,7 @@
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <!-- CTA Principal: Flujo de Paquetes -->
-        <a href="https://wa.me/6221424577?text=Hola%2C%20estoy%20interesada%20en%20los%20Paquetes%20Fundadora%20y%20el%20regalo%20de%20Navidad.%20Quisiera%20saber%20m%C3%A1s%20detalles%20para%20elegir%20mi%20opci%C3%B3n." target="_blank" class="group relative px-8 py-4 rounded-full bg-gradient-to-r from-vb-primary to-vb-secondary text-[#160b21] font-bold shadow-[0_0_20px_rgba(255,122,155,0.4)] transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(255,122,155,0.6)]">
+        <a href="#paquetes" class="group relative px-8 py-4 rounded-full bg-gradient-to-r from-vb-primary to-vb-secondary text-[#160b21] font-bold shadow-[0_0_20px_rgba(255,122,155,0.4)] transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(255,122,155,0.6)]">
           <span class="flex items-center gap-2">
             Quiero ser Fundadora <i class="ph-bold ph-star group-hover:animate-spin transition-transform"></i>
           </span>
@@ -302,13 +302,14 @@
 
         <div class="grid lg:grid-cols-2 gap-8">
             
-            <!-- Tarjeta de Valor Real --><div class="glass-card p-6 rounded-2xl frosted-border">
-                <h3 class="font-display text-xl font-bold mb-4 flex items-center gap-2"><i class="ph-fill ph-trophy text-vb-secondary"></i> Lo que incluye tu Transformación</h3>
-                <p class="text-sm text-vb-muted mb-4">El valor real mensual de todos los servicios incluidos en cualquier paquete es de <b>$1,300 - $1,800 MXN</b>, más el regalo DTX de diciembre. Como Fundadora, pagas solo tu paquete.</p>
+            <!-- Tarjeta de Valor Real (Paquetes Fundadora) -->
+            <div class="glass-card p-6 rounded-2xl frosted-border">
+                <h3 class="font-display text-xl font-bold mb-4 flex items-center gap-2"><i class="ph-fill ph-trophy text-vb-secondary"></i> Lo que incluye tu Transformación (Solo con Paquete)</h3>
+                <p class="text-sm text-vb-muted mb-4">El valor real mensual de todos los servicios que recibes al comprar cualquier paquete es de <b>$1,500 - $2,000 MXN</b>, más el regalo DTX de diciembre. Como Fundadora con paquete, pagas solo tu paquete.</p>
                 <ul class="space-y-3 text-sm text-vb-muted">
                     <li class="flex justify-between items-start">
-                        <span class="flex items-center gap-2"><i class="ph-fill ph-heartbeat text-vb-primary"></i> Clases con Fisioterapeuta Certificada:</span>
-                        <strong class="text-white">$600–$900</strong>
+                        <span class="flex items-center gap-2"><i class="ph-fill ph-heartbeat text-vb-primary"></i> Asesoría de Movimiento y Nutrición:</span>
+                        <strong class="text-white">$700–$1,000</strong>
                     </li>
                     <li class="flex justify-between items-start">
                         <span class="flex items-center gap-2"><i class="ph-fill ph-ruler text-vb-primary"></i> Acompañamiento Mensual (Medición + Foto):</span>
@@ -319,10 +320,11 @@
                         <strong class="text-white">$300</strong>
                     </li>
                     <li class="flex justify-between items-start">
-                        <span class="flex items-center gap-2"><i class="ph-fill ph-book-open-text text-vb-primary"></i> Contenido de Nutrición Exclusivo:</span>
+                        <span class="flex items-center gap-2"><i class="ph-fill ph-book-open-text text-vb-primary"></i> Contenido Exclusivo de Salud:</span>
                         <strong class="text-white">$200</strong>
                     </li>
                 </ul>
+                <p class="text-xs text-vb-accent/80 mt-4 italic">NOTA IMPORTANTE: Estos beneficios de valor aplican exclusivamente al adquirir un Paquete Fundadora (4, 8 o 12 créditos).</p>
             </div>
 
             <!-- Tarjeta de Inscripción y Clases Sueltas -->
@@ -331,14 +333,16 @@
                     ¡Expira 31 Diciembre!
                 </div>
                 <h3 class="font-display text-xl font-bold mb-4 flex items-center gap-2 mt-4"><i class="ph-fill ph-user-plus text-vb-secondary"></i> Inscripción y Clases Sueltas</h3>
-                <p class="text-sm text-vb-muted mb-4">Asegura tu precio especial con la <b>Inscripción Fundadora</b> (último mes) o prueba el estudio sin compromiso.</p>
+                <!-- PÁRRAFO SIMPLIFICADO -->
+                <p class="text-sm text-vb-muted mb-4">La <b>Inscripción Fundadora</b> es un pago único de $200 MXN que te permite <b>apartar tu estatus de Fundadora</b> para acceder a los Paquetes Fundadora cuando decidas, y te da un <b>precio preferencial inmediato</b> en clases sueltas.</p>
                 
                 <ul class="space-y-3 text-sm text-vb-muted">
-                    <li class="flex justify-between items-start">
+                    <li class="flex justify-between items-start border-t border-white/5 pt-3">
                         <span class="font-bold text-white flex items-center gap-2"><i class="ph-fill ph-seal-check text-vb-accent"></i> Inscripción Fundadora (Pago Único):</span>
                         <strong class="text-vb-accent">$200</strong>
                     </li>
-                    <li class="text-xs italic pl-7 text-vb-muted/70 pb-3"><b>Importante:</b> Si eliges cualquier paquete Fundadora (4, 8 o 12 créditos) en Diciembre, la inscripción <b>está 100% incluida y asegurada para 2026.</b></li>
+                    <!-- TEXTO DE NOTA SIMPLIFICADO -->
+                    <li class="text-xs italic pl-7 text-vb-muted/70 pb-3"><b>¡No pagues doble!</b> Si eliges cualquier Paquete Fundadora (4, 8 o 12 créditos) en Diciembre, la inscripción de $200 <b>ya está incluida en tu paquete</b>.</li>
                     
                     <li class="flex justify-between items-start border-t border-white/5 pt-3">
                         <span class="flex items-center gap-2"><i class="ph-fill ph-wave-sine text-vb-secondary"></i> Clase Demo (Para conocer el estudio):</span>
